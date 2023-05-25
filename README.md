@@ -26,4 +26,6 @@ also using room data base to use fave teams
 
 
 <img src="https://res.cloudinary.com/dn2hcmcqn/image/upload/v1685058929/Screenshot_1685058895_pgiima.png" width="300">
-<img src="https://res.cloudinary.com/dn2hcmcqn/image/upload/v1685058929/Screenshot_1685058895_pgiima.png" width="300">
+<img src="https://res.cloudinary.com/dn2hcmcqn/image/upload/v1685058932/Screenshot_1685058900_i2tn98.png" width="300">
+<img src="https://res.cloudinary.com/dn2hcmcqn/image/upload/v1685058932/Screenshot_1685058905_ubhw1t.png" width="300">
+<img src="https://res.cloudinary.com/dn2hcmcqn/image/upload/v1685058932/Screenshot_1685058911_krxlz8.png" width="300">
