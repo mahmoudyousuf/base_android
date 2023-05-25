@@ -6,7 +6,7 @@ import android.content.Context
 import com.example.carefertask.data.retrofit.ApiServices
 import com.example.carefertask.data.room.faveMatches.FaveTeamDao
 import com.example.carefertask.data.shared.DataManager
-import com.example.carefertask.ui.main.MainRepository
+import com.example.carefertask.ui.main.fragments.home.HomeRepository
 import com.example.carefertask.ui.splash.SplashRepository
 import dagger.Module
 import dagger.Provides
@@ -27,8 +27,8 @@ object Repository {
         dataManager: DataManager,
         api: ApiServices,
         fav: FaveTeamDao,
-    ): MainRepository =
-        MainRepository(appContext, dataManager, api, fav)
+    ): HomeRepository =
+        HomeRepository(appContext, dataManager, api, fav)
 
 
     @Singleton

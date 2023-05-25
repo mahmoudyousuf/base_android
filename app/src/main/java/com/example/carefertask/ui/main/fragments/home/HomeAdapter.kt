@@ -1,4 +1,4 @@
-package com.example.carefertask.ui.main
+package com.example.carefertask.ui.main.fragments.home
 
 import android.annotation.SuppressLint
 import android.os.Build
@@ -12,13 +12,15 @@ import com.example.carefertask.databinding.MatchItemBinding
 import com.example.carefertask.model.HeaderItem
 import com.example.carefertask.model.ListItem
 import com.example.carefertask.model.MatchItem
+import com.example.carefertask.model.MatchesItem
 import com.example.carefertask.util.extensions.convertToTime
 import java.util.*
 
 
-class MainGroupingAdapter(
+class HomeAdapter(
     private var myData: ArrayList<ListItem>,
-    val addFave: (id: Int) -> Unit
+    val addFave: (id: Int) -> Unit,
+    val onSelect: (model: MatchesItem) -> Unit,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
@@ -90,26 +92,53 @@ class MainGroupingAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(model: MatchItem, position: Int) {
 
-            if (model.matchItem.fave) {
-                binding.fave.setImageResource(R.drawable.baseline_star_rate_24)
+            if (model.matchItem.homeTeam?.fave!!) {
+                binding.faveHomeTeam.setImageResource(R.drawable.baseline_star_rate_24)
             } else {
-                binding.fave.setImageResource(R.drawable.baseline_star_outline_24)
+                binding.faveHomeTeam.setImageResource(R.drawable.baseline_star_outline_24)
             }
 
-            binding.fave.setOnClickListener {
+            if (model.matchItem.awayTeam?.fave!!) {
+                binding.faveAwayTeam.setImageResource(R.drawable.baseline_star_rate_24)
+            } else {
+                binding.faveAwayTeam.setImageResource(R.drawable.baseline_star_outline_24)
+            }
+
+            binding.faveHomeTeam.setOnClickListener {
 
                 val m = myData[position] as MatchItem
-                m.matchItem.fave = true
+                m.matchItem.homeTeam?.fave = true
                 myData.removeAt(position)
                 myData.add(position, m)
                 notifyDataSetChanged()
 
-                addFave(model.matchItem.id!!)
+                addFave(model.matchItem.homeTeam!!.id!!)
+            }
+
+            binding.faveAwayTeam.setOnClickListener {
+
+                val m = myData[position] as MatchItem
+                m.matchItem.awayTeam?.fave = true
+                myData.removeAt(position)
+                myData.add(position, m)
+                notifyDataSetChanged()
+
+                addFave(model.matchItem.awayTeam!!.id!!)
             }
 
             binding.homeTeam.text = model.matchItem.homeTeam?.name
             binding.awayTeam.text = model.matchItem.awayTeam?.name
+
+            if (model.matchItem.score?.fullTime?.homeTeam==null)
             binding.time.text = model.matchItem.utcDate?.take(16)?.convertToTime()
+            else
+                binding.time.text = "${model.matchItem.score?.fullTime?.homeTeam} - ${model.matchItem.score?.fullTime?.awayTeam}"
+
+
+
+            itemView.setOnClickListener {
+                onSelect(model.matchItem)
+            }
         }
 
     }

@@ -109,7 +109,7 @@ data class MatchesItem(
     @field:SerializedName("group")
     val group: Any? = null,
 
-    var fave: Boolean = false
+
 )
 
 data class Area(
@@ -128,6 +128,10 @@ data class AwayTeam(
 
     @field:SerializedName("id")
     val id: Int? = null
+
+    ,
+
+    var fave: Boolean = false
 )
 
 data class Season(
@@ -190,7 +194,9 @@ data class HomeTeam(
     val name: String? = null,
 
     @field:SerializedName("id")
-    val id: Int? = null
+    val id: Int? = null,
+
+    var fave: Boolean = false
 )
 
 data class Filters(

@@ -1,4 +1,4 @@
-package com.example.carefertask.ui.main
+package com.example.carefertask.ui.main.fragments.home
 
 import android.content.Context
 import com.example.carefertask.base.BaseRepository
@@ -10,7 +10,7 @@ import com.example.carefertask.model.MatchesResponse
 import retrofit2.Response
 import javax.inject.Inject
 
-class MainRepository @Inject constructor(
+class HomeRepository @Inject constructor(
     private val context: Context,
     private val dataManager: DataManager,
     private val api: ApiServices,

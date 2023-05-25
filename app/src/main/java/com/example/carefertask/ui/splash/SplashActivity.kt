@@ -8,15 +8,15 @@ import androidx.activity.viewModels
 import androidx.core.view.WindowCompat
 import com.example.carefertask.R
 import com.example.carefertask.base.BaseActivity
-import com.example.carefertask.databinding.ActivityMainBinding
+import com.example.carefertask.databinding.ActivitySplashBinding
 import com.example.carefertask.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SplashActivity : BaseActivity<ActivityMainBinding>() {
+class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
     val viewModel: SplashViewModel by viewModels()
-    lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivitySplashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -39,7 +39,7 @@ class SplashActivity : BaseActivity<ActivityMainBinding>() {
 
 
     override fun getLayoutId(): Int {
-        return R.layout.activity_main
+        return R.layout.activity_splash
     }
 
 
