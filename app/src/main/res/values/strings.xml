@@ -42,6 +42,8 @@
 
     <string name="some_thing_went_wrong_error_msg">Something went wrong, Please try again</string>
     <string name="check_internet_connection">Check your internet connection</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

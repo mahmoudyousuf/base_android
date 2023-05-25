@@ -3,6 +3,8 @@ package com.example.carefertask.ui.main
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.view.WindowCompat
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
 import com.etamn.util.Status
 import com.example.carefertask.R
 import com.example.carefertask.base.BaseActivity
@@ -19,6 +21,7 @@ import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
 import kotlin.math.absoluteValue
 
+
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
@@ -33,6 +36,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         super.onCreate(savedInstanceState)
         binding = viewDataBinding!!
 
+        setupViewPager(binding.viewPager);
+        binding.tabLayout.setupWithViewPager(binding.viewPager);
+
+
         adapter = MainGroupingAdapter(ArrayList()) {
             viewModel.addFaveMatch(it)
         }
@@ -43,6 +50,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         viewModel.getFaveMatch()
 
         setObservers()
+    }
+
+    private fun setupViewPager(viewPager: ViewPager) {
+        val adapter = Adapter(getChildFragmentManager())
+        adapter.addFragment(ChildFragment1(), "Tab 1")
+        adapter.addFragment(ChildFragment2(), "Tab 2")
+        viewPager.adapter = adapter
     }
 
 
