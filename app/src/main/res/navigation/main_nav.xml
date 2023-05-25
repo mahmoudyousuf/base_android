@@ -11,7 +11,11 @@
 
         <action
             android:id="@+id/openDetailsFragment"
-            app:destination="@id/DetailsFragment" />
+            app:destination="@id/DetailsFragment" >
+            <argument
+                android:name="model"
+                app:argType="string" />
+        </action>
 
     </fragment>
 
@@ -20,6 +24,9 @@
         android:name="com.example.carefertask.ui.main.fragments.details.DetailsFragment"
         android:label="DetailsFragment">
 
+        <argument
+            android:name="model"
+            app:argType="string" />
 
 
     </fragment>

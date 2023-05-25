@@ -14,6 +14,7 @@ import com.example.carefertask.model.MatchesItem
 import com.example.carefertask.model.MatchesResponse
 import com.example.carefertask.ui.main.fragments.home.util.UtilFun
 import com.example.carefertask.util.extensions.observe
+import com.example.carefertask.util.extensions.toJsonString
 import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
 import java.time.LocalDate
@@ -41,8 +42,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun seUpTabLayout() {
-        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("est"))
-        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("eqwest"))
+        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("All Matches"))
+        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("My Teams"))
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 myTeams = tab?.position == 1
@@ -67,7 +68,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         adapter = HomeAdapter(ArrayList(), {
             viewModel.addFaveMatch(it)
         }, {
-            navController.navigate(HomeFragmentDirections.openDetailsFragment())
+            navController.navigate(HomeFragmentDirections.openDetailsFragment(it.toJsonString()))
         })
         binding.list.adapter = adapter
     }
