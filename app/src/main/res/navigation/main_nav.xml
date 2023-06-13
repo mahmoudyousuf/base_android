@@ -1,34 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:startDestination="@id/HomeFragment">
+    app:startDestination="@id/BlankFragment1">
 
 
     <fragment
-        android:id="@+id/HomeFragment"
-        android:name="com.example.carefertask.ui.main.fragments.home.HomeFragment"
+        android:id="@+id/BlankFragment1"
+        android:name="com.example.rubikans.ui.main.BlankFragment1"
         android:label="HomeFragment">
 
-        <action
-            android:id="@+id/openDetailsFragment"
-            app:destination="@id/DetailsFragment" >
-            <argument
-                android:name="model"
-                app:argType="string" />
-        </action>
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/DetailsFragment"
-        android:name="com.example.carefertask.ui.main.fragments.details.DetailsFragment"
-        android:label="DetailsFragment">
-
-        <argument
-            android:name="model"
-            app:argType="string" />
 
 
     </fragment>
+
+
 
 </navigation>

@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.carefertask'
+    namespace 'com.example.rubikans'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.carefertask"
+        applicationId "com.example.rubikans"
         minSdk 26
         targetSdk 33
         versionCode 1
