@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.rubikans'
+    namespace 'rubikans.rubik.doctor'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.rubikans"
+        applicationId "rubikans.rubik.doctor"
         minSdk 26
         targetSdk 33
         versionCode 1

@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/BlankFragment1"
-        android:name="com.example.rubikans.ui.main.BlankFragment1"
+        android:name="rubikans.rubik.doctor.ui.main.BlankFragment1"
         android:label="HomeFragment">
 
 
