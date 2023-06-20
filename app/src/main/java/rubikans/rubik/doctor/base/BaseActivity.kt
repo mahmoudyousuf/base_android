@@ -21,6 +21,8 @@ import rubikans.rubik.doctor.R
 import rubikans.rubik.doctor.util.extensions.ifNull
 import com.google.android.material.snackbar.Snackbar
 import com.google.gson.JsonParser
+import rubikans.rubik.doctor.data.shared.DataManager
+import rubikans.rubik.doctor.util.LocaleUtils
 
 
 private const val TAG = "BaseActivity"
@@ -46,11 +48,18 @@ abstract class BaseActivity<T : ViewDataBinding?> : AppCompatActivity() {
     abstract fun getLayoutId(): Int
 
 
+    init {
+        LocaleUtils.updateConfig(this)
+    }
 
+
+    lateinit var dataManager: DataManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         createCustomProgressDialog()
+        dataManager = (application as BaseApplication).dataManager!!
+
         window.setFlags(
             WindowManager.LayoutParams.FLAG_SECURE,
             WindowManager.LayoutParams.FLAG_SECURE

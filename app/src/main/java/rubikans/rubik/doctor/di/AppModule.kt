@@ -2,6 +2,7 @@ package rubikans.rubik.doctor.di
 
 
 import android.content.Context
+import android.content.pm.PackageInfo
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import rubikans.rubik.doctor.BuildConfig
 import rubikans.rubik.doctor.base.BaseApplication
@@ -18,6 +19,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 
@@ -27,7 +29,7 @@ object AppModule {
     private val loggingInterceptor = HttpLoggingInterceptor()
 
     init {
-        if (BuildConfig.DEBUG) {
+        if (true /* BuildConfig.DEBUG*/) {
             loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         } else {
             loggingInterceptor.level = HttpLoggingInterceptor.Level.NONE
@@ -37,49 +39,62 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideDataManager(@ApplicationContext context: Context): DataManager =
-        (Contexts.getApplication(context) as BaseApplication).dataManager!!
+    fun providePackageInfo(@ApplicationContext context: Context): PackageInfo =
+        context.packageManager.getPackageInfo(context.packageName, 0);
+
 
     @Singleton
     @Provides
-    internal fun provideChuckerInterceptor(@ApplicationContext context: Context): ChuckerInterceptor {
-        return ChuckerInterceptor.Builder(context).build()
-    }
+    @Named("VersionName")
+    fun provideVersionName(packageInfo: PackageInfo): String =
+        packageInfo.versionName
+
+    @Singleton
+    @Provides
+    fun provideDataManager(@ApplicationContext context: Context): DataManager =
+        (Contexts.getApplication(context) as BaseApplication).dataManager!!
+
+
 
     @Provides
     @Singleton
     fun provideOkHttpClient(
-        dataManager: DataManager,
-        chuckerInterceptor: ChuckerInterceptor,
-    ): OkHttpClient {
-        val builder = OkHttpClient.Builder()
+        dataManager: DataManager
+    ): OkHttpClient =
+        OkHttpClient.Builder()
             .connectTimeout(5, TimeUnit.MINUTES)
             .readTimeout(5, TimeUnit.MINUTES)
             .writeTimeout(5, TimeUnit.MINUTES)
             .addInterceptor(loggingInterceptor)
             .addInterceptor(Interceptor { chain ->
+                var lan = "1"
+
+                if(dataManager.lang == "ar"){
+                    lan = "2"
+                }else{
+                    lan = "1"
+                }
                 val request = chain.request().newBuilder()
-                    .header("X-Auth-Token", "${dataManager.apiKey}")
+                    .header("App-Platform", "android")
+                    .header("Authorization", "Bearer ${dataManager.token}")
+                    .header("lang", lan)
                     .build()
                 chain.proceed(request)
             })
-        if (BuildConfig.DEBUG) {
-            builder.addInterceptor(chuckerInterceptor)
-        }
-
-        return builder.build()
-    }
+            .build()
 
 
     @Provides
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-        .baseUrl("https://api.football-data.org/")
+//        .baseUrl("https://devdevartlabcrm.com")
+//        .baseUrl("https://test.rubikcare.com")
+//        .baseUrl("https://testapi.rubikcare.com")
+        .baseUrl("https://stage.rubikcare.com")
+//        .baseUrl("https://uat.rubikcare.com")
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-
-
 
 
 }

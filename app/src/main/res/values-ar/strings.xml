@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rubik Care</string>
+
+
+
+    <string name="welcome_back">مرحبا بعودتك!</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="mobile_number">رقم الهاتف</string>
+    <string name="or_login">OR \n Login with</string>
+    <string name="or">او </string>
+    <string name="forget_Password">نسيت كلمة المرور</string>
+    <string name="create_account">إنشاء حساب</string>
+    <string name="agree_terms">بالتسجيل فإنك توافق على شروط وأحكام روبيك كير</string>
+    <string name="terms">الشروط والأحكام</string>
+    <string name="uer_name">اسم المستخدم</string>
+    <string name="logout">تسجيل خروج</string>
+    <string name="change_your_password">تغيير كلمة المرور</string>
+    <string name="old_password">كلمة المرور القديمة</string>
+    <string name="new_password">كلمة المرور الجديدة</string>
+    <string name="confirm">تأكيد</string>
+    <string name="email_are_required">البريد الإلكتروني مطلوب</string>
+    <string name="password_are_required">كلمة المرور مطلوبة</string>
+    <string name="not_member">ليس لديك حساب</string>
+    <string name="signUP">افتح حساب الأن</string>
+    <string name="female">أنثى</string>
+    <string name="male">ذكر</string>
+    <string name="full_name_are_required">الاسم الكامل مطلوب</string>
+    <string name="mobile_are_required">رقم الهاتف مطلوب</string>
+    <string name="phone_number_digits_should_be_from_10_to_11_numbers">يجب أن تتراوح أرقام أرقام الهواتف من 10 إلى 11 رقمًا</string>
+    <string name="birth_date_are_required">تاريخ الميلاد مطلوب</string>
+    <string name="gender_are_required">الجنس مطلوب</string>
+    <string name="password_should_be_more_than_8_char">يجب أن تكون كلمة المرور أكثر من 8 أحرف</string>
+    <string name="password_should_contains_number_and_at_least_1_char">يجب أن تحتوي كلمة المرور على ارقام و حرف واحد على الأقل</string>
+    <string name="confirm_Password_are_required">تأكيد كلمة المرور مطلوب</string>
+    <string name="passwords_not_match">كلمات المرور غير متطابقة</string>
+    <string name="please_select_an_profile_image">الرجاء تحديد صورة الملف الشخصي</string>
+    <string name="full_name_ed">الاسم الكامل</string>
+    <string name="mobile_number_ed">رقم الهاتف المحمول</string>
+    <string name="birth_date_ed">تاريخ الميلاد</string>
+    <string name="gender">الجنس</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="signup">افتح حساب الأن</string>
+    <string name="already_member">لديك حساب بالفعل</string>
+    <string name="signIn"><u>تسجيل الدخول</u></string>
+    <string name="forgot_password">هل نسيت كلمة السر ؟؟</string>
+    <string name="enter_your_email_to_get_a_password_reset_link">أدخل بريدك الإلكتروني للحصول على رابط إعادة تعيين كلمة المرور</string>
+    <string name="mobile_or_email">رقم الهاتف أو البريد الإلكتروني</string>
+    <string name="send">ارسال</string>
+    <string name="reset_password">إعادة تعيين كلمة المرور</string>
+    <string name="verification">تاكيد</string>
+    <string name="enter_verification_code_to_continue">أدخل رمز التحقق للمتابعة</string>
+    <string name="resend_code">أعد إرسال الرمز</string>
+    <string name="upload_your_picture">ارفع صورتك</string>
+    <string name="new_password_ed">كلمة المرور الجديدة</string>
+    <string name="change_app_language">تغيير لغة التطبيق</string>
+    <string name="you_should_agree_to_our_terms">يجب أن توافق على شروطنا</string>
+    <string name="are_you_sure">هل أنت متأكد؟</string>
+    <string name="yes_sure">نعم بالتأكيد</string>
+    <string name="no_cancel">لا قم بالإلغاء</string>
+    <string name="language">اللغة</string>
+
+    <string name="enter_valid_email_format">أدخل تنسيق بريد إلكتروني صالحًا</string>
+    <string name="save">حفظ</string>
+
+    <string name="edit">تعديل</string>
+    <string name="delete">حذف</string>
+
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="current_password_ed">كلمة السر الحالية</string>
+
+    <string name="are_you_sure_you_want_log_out">هل أنت متأكد أنك تريد تسجيل الخروج؟</string>
+    <string name="cancel">الغاء</string>
+
+
+
+
+    <string name="home">الرئيسية</string>
+    <string name="appointment">المواعيد</string>
+    <string name="orders">الطلبات</string>
+    <string name="profile">الملف الشخصي</string>
+
+    <string name="my_clinics">عياداتي</string>
+
+    <string name="patients">المرضى</string>
+    <string name="clinic_finance">ماليات العياده</string>
+
+
+
+
+
+    <string name="check_internet_connection">Check your internet connection</string>
+    <string name="some_thing_went_wrong_error_msg">Something went wrong, Please try again</string>
+
+
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+
+
+
+    <string name="please_login">Please Login</string>
+    <string name="input_required">Input Required</string>
+    <string name="enter_something">Enter something</string>
+
+
+
+</resources>

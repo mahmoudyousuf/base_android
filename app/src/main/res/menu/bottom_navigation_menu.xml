@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/appointment_selector"
+        android:title="@string/appointment" />
+    <item
+        android:id="@+id/PatientFragment"
+        android:icon="@drawable/patient_selector"
+        android:title="@string/patients" />
+    <item
+        android:id="@+id/FinanceFragment"
+        android:icon="@drawable/finance_selector"
+        android:title="@string/clinic_finance" />
+    <item
+        android:id="@+id/ProfileFragment"
+        android:icon="@drawable/doctor"
+        android:title="@string/profile" />
+
+</menu>

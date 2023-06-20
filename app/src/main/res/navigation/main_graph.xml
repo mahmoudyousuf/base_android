@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="rubikans.rubik.doctor.ui.main.home.HomeFragment"
+        android:label="MainHomeFragment"
+        tools:layout="@layout/fragment_home">
+
+
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="rubikans.rubik.doctor.ui.main.changePassword.ChangePasswordFragment"
+        android:label="ChangePasswordFragment"
+        tools:layout="@layout/fragment_change_password"
+        />
+
+
+    <fragment
+        android:id="@+id/ProfileFragment"
+        android:name="rubikans.rubik.doctor.ui.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+
+
+        <action
+            android:id="@+id/openChangePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+
+
+
+
+
+    </fragment>
+
+
+</navigation>
