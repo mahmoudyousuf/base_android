@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat
 
 import rubikans.rubik.doctor.base.BaseApplication
 import rubikans.rubik.doctor.ui.auth.AuthActivity
+import java.util.*
 
 object LoginUtils {
 
@@ -15,9 +16,15 @@ object LoginUtils {
 
 
         val dataManager = baseApplication.dataManager!!
+        var lang = dataManager.lang
         dataManager.clear()
 
+        if(lang == "ar"){
+            dataManager.saveLang(LocaleUtils.LAN_ARABIC)
 
+        }else{
+            dataManager.saveLang(LocaleUtils.LAN_ENGLISH)
+        }
 
 
         if (showToast)
