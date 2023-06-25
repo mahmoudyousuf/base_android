@@ -1,4 +1,4 @@
-package rubikans.rubik.doctor.ui.clinicBraches
+package rubikans.rubik.doctor.ui.main.clinicBraches
 import android.content.Context
 import com.google.gson.JsonObject
 import retrofit2.Response

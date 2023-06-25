@@ -64,13 +64,35 @@ class AppointmentDetailsFragment : BaseFragment<FragmentAppointmentDetailsBindin
                         startActivity(dialIntent)
                     }
                     binding.tvPatientIdTxt.text = "#${model.patientID}"
-                    binding.tvPatientBirthDateTxt.text = CommonUtilities.convertFullDateToFormattedDate(model.createDate)
+
+                    if(model.patientBirthDate != null ){
+                        binding.tvPatientBirthDateTxt.text = CommonUtilities.convertFullDateToFormattedDate(model.patientBirthDate)
+                    }
                     binding.tvPatientHeightTxt.text = "${model.height} ${getString(R.string.cm)}"
                     binding.tvPatientWeightTxt.text =  "${model.weight} ${getString(R.string.kg)}"
                     binding.tvServiceTypeTxt.text = model.consultationServiceName
                     binding.tvStatusTxt.text = model.statusName
-                    binding.tvDateTxt.text = CommonUtilities.convertFullDateToFormattedDateTxt(model.createDate)
-                    binding.tvDurationTxt.text = "${model.duration} ${getString(R.string.minutes)}"
+
+
+                    if(model.bookingDate != null && model.startTime == null){
+                        binding.tvDateTxt.text = CommonUtilities.convertFullDateToFormattedDateTxtWithoutTime(model.bookingDate)
+                    }
+
+                    else if (model.bookingDate == null && model.startTime != null){
+                        binding.tvDateTxt.text = CommonUtilities.convertTimeToFormattedTimeTxt(model.startTime)
+                    }
+                   else if(model.bookingDate != null && model.startTime != null){
+                        binding.tvDateTxt.text = CommonUtilities.convertFullDateToFormattedDateTxtWithoutTime(model.bookingDate) + "-" +CommonUtilities.convertTimeToFormattedTimeTxt(model.startTime)
+                    }
+
+                    if (model.duration == null){
+
+                        binding.durationTxt.hide()
+                        binding.tvDurationTxt.hide()
+                    }else {
+                        binding.tvDurationTxt.text = "${model.duration} ${getString(R.string.minutes)}"
+
+                    }
                     binding.tvAmountTxt.text = "${model.bookingFees} ${getString(R.string.egp)}"
 
                     if (model.isPaied == true){

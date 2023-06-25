@@ -1,4 +1,4 @@
-package rubikans.rubik.doctor.ui.clinicBraches
+package rubikans.rubik.doctor.ui.main.clinicBraches
 
 import android.content.Intent
 import android.os.Bundle

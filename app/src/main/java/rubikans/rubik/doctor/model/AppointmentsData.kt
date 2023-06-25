@@ -81,7 +81,7 @@ data class AppointmentItem(
 	val createdBy: Any? = null,
 
 	@field:SerializedName("StartTime")
-	val startTime: Any? = null,
+	val startTime: String? = null,
 
 	@field:SerializedName("PatientWork")
 	val patientWork: Any? = null,

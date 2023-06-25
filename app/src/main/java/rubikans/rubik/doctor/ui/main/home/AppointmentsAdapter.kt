@@ -58,9 +58,26 @@ class AppointmentsAdapter(
         fun bind(model: AppointmentItem) {
             binding.tvNameTxt.text = model.patientName
             binding.tvIdTxt.text = "#${model.patientID.toString()}"
-            binding.tvPaymentStatusTxt.text = model.payMentMethodName
-            if(model.createDate != null ){
-                binding.tvDateTxt.text = CommonUtilities.convertFullDateToFormattedDateTxt(model.createDate)
+
+
+            if (model.isPaied == true){
+                binding.tvPaymentStatusTxt.text = context.getString(R.string.paid)
+            }else{
+                binding.tvPaymentStatusTxt.text = context.getString(R.string.unpaid)
+            }
+
+//            binding.tvPaymentStatusTxt.text = model.payMentMethodName
+
+
+            if(model.bookingDate != null && model.startTime == null){
+                binding.tvDateTxt.text = CommonUtilities.convertFullDateToFormattedDateTxtWithoutTime(model.bookingDate)
+            }
+
+            else if (model.bookingDate == null && model.startTime != null){
+                binding.tvDateTxt.text = CommonUtilities.convertTimeToFormattedTimeTxt(model.startTime)
+            }
+            else if(model.bookingDate != null && model.startTime != null){
+                binding.tvDateTxt.text = CommonUtilities.convertFullDateToFormattedDateTxtWithoutTime(model.bookingDate) + "-" +CommonUtilities.convertTimeToFormattedTimeTxt(model.startTime)
             }
 
 
@@ -88,11 +105,9 @@ class AppointmentsAdapter(
                     binding.tvVisitStatusTxt.setTextColor(context.getColor(R.color.rGreenColor))
                     binding.tvVisitStatusTxt.text = model.statusName
                     binding.onServiceLayout.visible()
-                    binding.noShowLayout.visible()
-
-
+                    binding.cancelLayout.visible()
+                    binding.noShowLayout.hide()
                     binding.confirmLayout.hide()
-                    binding.cancelLayout.hide()
                     binding.doneLayout.hide()
                 }
 

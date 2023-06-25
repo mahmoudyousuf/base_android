@@ -10,7 +10,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import rubikans.rubik.doctor.base.BaseActivity
 import rubikans.rubik.doctor.databinding.ActivitySplashBinding
 import rubikans.rubik.doctor.ui.auth.AuthActivity
-import rubikans.rubik.doctor.ui.clinicBraches.ClinicBranchesActivity
+import rubikans.rubik.doctor.ui.main.clinicBraches.ClinicBranchesActivity
 import rubikans.rubik.doctor.ui.main.MainActivity
 import rubikans.rubik.doctor.util.LocaleUtils
 

@@ -1,4 +1,4 @@
-package rubikans.rubik.doctor.ui.clinicBraches
+package rubikans.rubik.doctor.ui.main.clinicBraches
 
 import com.etamn.util.SingleLiveEvent
 import com.etamn.util.Status

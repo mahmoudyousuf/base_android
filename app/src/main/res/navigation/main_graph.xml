@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/ProfileFragment"
-        android:name="rubikans.rubik.doctor.ui.profile.ProfileFragment"
+        android:name="rubikans.rubik.doctor.ui.main.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile">
 

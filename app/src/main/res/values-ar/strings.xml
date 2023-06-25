@@ -100,7 +100,7 @@
     <string name="try_again">جرب مره آخرى</string>
     <string name="error_text_label">خطأ في الإتصال</string>
     <string name="no_show">لم يحضر</string>
-    <string name="on_service">ي الخدمة</string>
+    <string name="on_service">في الخدمة</string>
     <string name="done">تم</string>
     <string name="appointment_details">تفاصيل الموعد</string>
     <string name="patient_information">معلومات المريض</string>
@@ -133,7 +133,7 @@
     <string name="cancelled">ملغى</string>
     <string name="data_range">الفترة الزمنية</string>
     <string name="apply">تأكيد</string>
-    <string name="check_user_and_password">تحقق من اسم المستخدم وكلمة المرور</string>
+    <string name="check_user_and_password">اسم المستخدم أو كلمة المرور غير صحيحة</string>
     <string name="from">من</string>
     <string name="to">الى</string>
     <string name="yes">نعم</string>

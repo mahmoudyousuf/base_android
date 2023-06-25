@@ -1,4 +1,4 @@
-package rubikans.rubik.doctor.ui.profile
+package rubikans.rubik.doctor.ui.main.profile
 
 import android.os.Bundle
 import android.view.View

@@ -131,7 +131,7 @@
     <string name="cancelled">Cancelled</string>
     <string name="data_range">Data Range</string>
     <string name="apply">Apply</string>
-    <string name="check_user_and_password">Check user name and password</string>
+    <string name="check_user_and_password">Incorrect username or password</string>
     <string name="from">from</string>
     <string name="to">to</string>
     <string name="yes">yes</string>

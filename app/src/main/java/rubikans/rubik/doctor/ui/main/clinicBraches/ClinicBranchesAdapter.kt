@@ -1,4 +1,4 @@
-package rubikans.rubik.doctor.ui.clinicBraches
+package rubikans.rubik.doctor.ui.main.clinicBraches
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -12,6 +12,7 @@ import rubikans.rubik.doctor.data.shared.DataManager
 import rubikans.rubik.doctor.databinding.ItemClinicBinding
 import rubikans.rubik.doctor.model.ClinicBranchesDataItem
 import rubikans.rubik.doctor.util.Constants
+import rubikans.rubik.doctor.util.extensions.hide
 import rubikans.rubik.doctor.util.extensions.loadImage
 
 
@@ -56,16 +57,26 @@ class ClinicBranchesAdapter(
         @SuppressLint("SuspiciousIndentation", "SetTextI18n")
         fun bind(model: ClinicBranchesDataItem) {
 
-            if(model.addressName == null){
+            if(model.branchName != null){
                 binding.tvNameTxt.text =  model.branchName
 
-            }else if(model.branchName == null){
-                binding.tvNameTxt.text =  model.addressName
-
             }else{
-                binding.tvNameTxt.text =  model.addressName +"-"+ model.branchName
+                binding.tvNameTxt.hide()
 
             }
+
+
+            if(model.addressName != null){
+                binding.tvLocationTxt.text =  model.addressName
+
+            }else{
+                binding.tvLocationTxt.hide()
+            }
+
+
+
+
+
 
 
 

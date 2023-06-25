@@ -10,9 +10,10 @@ import rubikans.rubik.doctor.R
 import rubikans.rubik.doctor.base.BaseFragment
 import rubikans.rubik.doctor.base.BaseResponse
 import rubikans.rubik.doctor.databinding.FragmentSignInBinding
-import rubikans.rubik.doctor.ui.clinicBraches.ClinicBranchesActivity
+import rubikans.rubik.doctor.ui.main.clinicBraches.ClinicBranchesActivity
 import rubikans.rubik.doctor.ui.main.MainActivity
 import rubikans.rubik.doctor.util.extensions.observe
+import java.util.regex.Pattern
 
 @AndroidEntryPoint
 class SignInFragment : BaseFragment<FragmentSignInBinding>() {
@@ -60,6 +61,20 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
                 binding.email.setError(getString(R.string.email_are_required))
                 return@setOnClickListener
             }
+
+            if (!Pattern.compile(
+                    "^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                            + "((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                            + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                            + "([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                            + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                            + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$"
+                ).matcher(binding.email.getText()).matches()
+            ) {
+                binding.email.setError(getString(R.string.enter_valid_email_format))
+                return@setOnClickListener
+            }
+
             if (binding.password.getText().isEmpty()) {
                 binding.password.setError(getString(R.string.password_are_required))
                 return@setOnClickListener

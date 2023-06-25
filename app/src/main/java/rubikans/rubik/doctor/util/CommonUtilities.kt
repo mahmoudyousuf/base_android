@@ -149,6 +149,22 @@ object CommonUtilities {
     }
 
 
+    fun convertTimeToFormattedTimeTxt(oldTime: String?): String? {
+
+        val date = SimpleDateFormat("hh:mm:ss", Locale.US).parse(oldTime)
+        val milliseconds = date.time
+        val fmt = SimpleDateFormat("hh:mm a", Locale.US)
+        return fmt.format(milliseconds)
+    }
+
+
+    fun convertFullDateToFormattedDateTxtWithoutTime(oldTime: String?): String? {
+
+        val date = SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss", Locale.US).parse(oldTime)
+        val milliseconds = date.time
+        val fmt = SimpleDateFormat("d MMMM", Locale.US)
+        return fmt.format(milliseconds)
+    }
 
     fun convertFullDateToFormattedDate_(oldTime: String?): String? {
 

@@ -48,6 +48,11 @@ class AppointmentsFilterBottomSheet(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+        id = statusId
+
+
         fromDate =
             DatePickerDialog.OnDateSetListener { view, year, month, day ->
                 myFromCalendar.set(Calendar.YEAR, year)

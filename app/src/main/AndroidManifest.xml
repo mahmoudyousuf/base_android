@@ -44,7 +44,7 @@
         </activity>
 
         <activity
-            android:name=".ui.clinicBraches.ClinicBranchesActivity"
+            android:name=".ui.main.clinicBraches.ClinicBranchesActivity"
             android:exported="false"
             android:screenOrientation="portrait" >
         </activity>

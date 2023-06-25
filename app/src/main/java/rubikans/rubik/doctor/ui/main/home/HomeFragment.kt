@@ -1,9 +1,7 @@
 package rubikans.rubik.doctor.ui.main.home
 
-import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.activityViewModels
@@ -22,8 +20,7 @@ import rubikans.rubik.doctor.databinding.FragmentHomeBinding
 import rubikans.rubik.doctor.ui.auth.AuthActivity
 import rubikans.rubik.doctor.ui.bottomSheets.appointmentsFilter.AppointmentsFilterBottomSheet
 import rubikans.rubik.doctor.ui.bottomSheets.changeAppointmentstatus.ChangeAppointmentStatusBottomSheet
-import rubikans.rubik.doctor.ui.bottomSheets.signOut.SignOutBottomSheet
-import rubikans.rubik.doctor.ui.clinicBraches.ClinicBranchesActivity
+import rubikans.rubik.doctor.ui.main.clinicBraches.ClinicBranchesActivity
 import rubikans.rubik.doctor.util.extensions.hide
 import rubikans.rubik.doctor.util.extensions.observe
 import rubikans.rubik.doctor.util.extensions.visible
@@ -37,6 +34,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
     lateinit var binding: FragmentHomeBinding
     val viewModel: HomeViewModel by activityViewModels()
     private lateinit var adapter: AppointmentsAdapter
+    var charCount = 0
+
+
+
+
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,6 +47,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
 
         binding = viewDataBinding!!
 
+        charCount = 0
 
         binding.customBar.hideRightIcon()
         binding.customBar.leftImage = R.drawable.ic_home_menu
@@ -106,7 +110,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
                     onConfirmed = {
 
 
-                        baseActivity.showSuccessSnackbar("confirm clicked")
 
                         viewModel.changeAppointmentStatus(
                             pBookingID = it.bookingID.toString(),
@@ -131,9 +134,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
                 val bottomSheet = ChangeAppointmentStatusBottomSheet(
                     onConfirmed = {
 
-
-                        baseActivity.showSuccessSnackbar("cancel clicked")
-
                         viewModel.changeAppointmentStatus(
                             pBookingID = it.bookingID.toString(),
                             pStatus = "5"
@@ -154,14 +154,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
                 val bottomSheet = ChangeAppointmentStatusBottomSheet(
                     onConfirmed = {
 
-
-                        baseActivity.showSuccessSnackbar("no show clicked")
-
                         viewModel.changeAppointmentStatus(
                             pBookingID = it.bookingID.toString(),
                             pStatus = "6"
                         )
-
 
                     },
 
@@ -178,7 +174,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
                     onConfirmed = {
 
 
-                        baseActivity.showSuccessSnackbar("done clicked")
 
                         viewModel.changeAppointmentStatus(
                             pBookingID = it.bookingID.toString(),
@@ -201,14 +196,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
                 val bottomSheet = ChangeAppointmentStatusBottomSheet(
                     onConfirmed = {
 
-
-                        baseActivity.showSuccessSnackbar("on service clicked")
-
                         viewModel.changeAppointmentStatus(
                             pBookingID = it.bookingID.toString(),
                             pStatus = "3"
                         )
-
 
                     },
 
@@ -234,7 +225,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
 
 
 
-        viewModel.getAppointments()
+//        viewModel.getAppointments()
 
         setObserver()
 
@@ -294,8 +285,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
 
         lifecycleScope.launch {
             adapter.loadStateFlow.collect {
-                binding.appointmentsList.adapter
                 if (it.refresh is LoadState.Loading) {
+                    charCount ++
                     baseActivity.showDialogLoading()
                 } else {
                     baseActivity.hideDialogLoading()
@@ -368,7 +359,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
     override fun onQueryTextChange(newText: String): Boolean {
         val userInput = newText.lowercase(Locale.getDefault())
 
-        viewModel.pSearchText.postValue(userInput)
+        if(charCount != 0){
+            viewModel.pSearchText.postValue(userInput)
+        }
+        charCount++
+
 
         return true
 

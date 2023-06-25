@@ -15,7 +15,7 @@ import rubikans.rubik.doctor.ui.auth.forgetPasswordOtpCheck.ForgetPasswordOtpChe
 import rubikans.rubik.doctor.ui.auth.signIn.SignInRepository
 import rubikans.rubik.doctor.ui.bottomSheets.changeLangauge.LangRepository
 import rubikans.rubik.doctor.ui.bottomSheets.signOut.SignOutRepository
-import rubikans.rubik.doctor.ui.clinicBraches.ClinicBranchesRepository
+import rubikans.rubik.doctor.ui.main.clinicBraches.ClinicBranchesRepository
 import rubikans.rubik.doctor.ui.main.changePassword.ChangePasswordRepository
 import rubikans.rubik.doctor.ui.main.home.HomeRepository
 import rubikans.rubik.doctor.ui.main.home.appointmentDetails.AppointmentDetailsRepository
