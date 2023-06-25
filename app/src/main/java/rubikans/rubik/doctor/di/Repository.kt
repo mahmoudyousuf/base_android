@@ -17,6 +17,8 @@ import rubikans.rubik.doctor.ui.bottomSheets.changeLangauge.LangRepository
 import rubikans.rubik.doctor.ui.bottomSheets.signOut.SignOutRepository
 import rubikans.rubik.doctor.ui.clinicBraches.ClinicBranchesRepository
 import rubikans.rubik.doctor.ui.main.changePassword.ChangePasswordRepository
+import rubikans.rubik.doctor.ui.main.home.HomeRepository
+import rubikans.rubik.doctor.ui.main.home.appointmentDetails.AppointmentDetailsRepository
 import javax.inject.Singleton
 
 
@@ -105,6 +107,27 @@ object Repository {
         api: ApiServices,
     ): LangRepository =
         LangRepository(appContext, dataManager,api)
+
+
+    @Singleton
+    @Provides
+    fun homeRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): HomeRepository =
+        HomeRepository(appContext, dataManager,api)
+
+
+
+    @Singleton
+    @Provides
+    fun appointmentDetailsRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): AppointmentDetailsRepository =
+        AppointmentDetailsRepository(appContext, dataManager,api)
 
 
 

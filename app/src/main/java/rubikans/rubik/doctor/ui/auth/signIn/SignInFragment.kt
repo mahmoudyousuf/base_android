@@ -117,7 +117,8 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
 
 
                     }else{
-                        baseActivity.showWarningSnackbar(it.message!!)
+                        baseActivity.showWarningSnackbar(getString(R.string.check_user_and_password))
+
                     }
 
 

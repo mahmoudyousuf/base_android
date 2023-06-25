@@ -45,7 +45,6 @@ class ClinicBranchesActivity : BaseActivity<ActivityClinicBranchesBinding>() {
         adapter = ClinicBranchesAdapter(
              java.util.ArrayList(),
             onItemSelected = { clinic ->
-                this.showSuccessSnackbar(clinic.branchName)
                 this.dataManager.saveClinic(clinic.toJsonString())
                 val i = Intent(this, MainActivity::class.java)
                 i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

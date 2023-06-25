@@ -86,6 +86,17 @@ abstract class BaseViewModel(private val repository: BaseRepository) : ViewModel
     }
 
 
+    fun <T> checkResponse(response: Response<BaseResponse<T>>): Boolean {
+        return when (handleResponse(response)) {
+            is Status.Success<*> -> {
+                true
+            }
+            else -> {
+                false
+            }
+        }
+    }
+
 
 
 }

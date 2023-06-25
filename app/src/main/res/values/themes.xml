@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.rubikans" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.rubikans" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/rPrimaryColor</item>
         <item name="colorPrimaryVariant">@color/rPrimaryColor</item>
@@ -14,10 +14,10 @@
         <!-- Customize your theme here. -->
     </style>
     <!-- Base application theme. -->
-    <style name="Base.Theme.rubikans" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
+<!--    <style name="Base.Theme.rubikans" parent="Theme.Material3.Light.NoActionBar">-->
+<!--        &lt;!&ndash; Customize your light theme here. &ndash;&gt;-->
+<!--        &lt;!&ndash; <item name="colorPrimary">@color/my_light_primary</item> &ndash;&gt;-->
+<!--    </style>-->
 
     <style name="DialogCustomTheme">
         <item name="android:windowFrame">@null</item>

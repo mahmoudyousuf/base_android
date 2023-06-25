@@ -91,6 +91,57 @@
 
 
 
+
+
+    <string name="appointments">الحجوزات</string>
+    <string name="payment_status">حالة الدفع :</string>
+    <string name="date_time">التاريخ والوقت : </string>
+    <string name="no_appointment_found">لم يتم العثور على اي مواعيد!</string>
+    <string name="try_again">جرب مره آخرى</string>
+    <string name="error_text_label">خطأ في الإتصال</string>
+    <string name="no_show">لم يحضر</string>
+    <string name="on_service">ي الخدمة</string>
+    <string name="done">تم</string>
+    <string name="appointment_details">تفاصيل الموعد</string>
+    <string name="patient_information">معلومات المريض</string>
+    <string name="name_">الاسم :</string>
+    <string name="id_">الرقم المسلسل :</string>
+    <string name="birthdate_">تاريخ الميلاد :</string>
+    <string name="height_">الطول :</string>
+    <string name="weight_">الوزن :</string>
+    <string name="appointment_information">معلومات الموعد</string>
+    <string name="services_type_">نوع الخدمة :</string>
+    <string name="status_">الحالة :</string>
+    <string name="date_">التاريخ :</string>
+    <string name="duration_">المدة :</string>
+    <string name="amount_">القيمة :</string>
+    <string name="payment_status_">حالة الدفع :</string>
+    <string name="payment_method_">طريقة الدفع :</string>
+    <string name="extra_phone_number_">رقم تليفون اضافي :</string>
+    <string name="patient_problem">شكوى المريض</string>
+    <string name="cm">سم</string>
+    <string name="kg">كج</string>
+    <string name="minutes">دقيقة</string>
+    <string name="egp">جنيه</string>
+    <string name="paid">مدفوع</string>
+    <string name="unpaid">غير مدفوع</string>
+    <string name="filter">تصنيف</string>
+    <string name="choose_status">اختر الحالة</string>
+    <string name="pending">معلق</string>
+    <string name="confirmed">مؤكد</string>
+    <string name="on_services">في الخدمة</string>
+    <string name="cancelled">ملغى</string>
+    <string name="data_range">الفترة الزمنية</string>
+    <string name="apply">تأكيد</string>
+    <string name="check_user_and_password">تحقق من اسم المستخدم وكلمة المرور</string>
+    <string name="from">من</string>
+    <string name="to">الى</string>
+    <string name="yes">نعم</string>
+    <string name="are_you_sure_change_status">هل ان متأكد انك تود تغير حالة الموعد ؟</string>
+    <string name="phone_number_">رقم التليفون :</string>
+    <string name="reset">اعادة تعيين</string>
+
+
     <string name="check_internet_connection">Check your internet connection</string>
     <string name="some_thing_went_wrong_error_msg">Something went wrong, Please try again</string>
 

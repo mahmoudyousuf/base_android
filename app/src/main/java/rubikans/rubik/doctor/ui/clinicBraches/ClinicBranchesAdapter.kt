@@ -69,7 +69,7 @@ class ClinicBranchesAdapter(
 
 
 
-            binding.image.loadImage(Constants.BASE_IMAGES_URL_MANUAL  + model.branchImagePath , R.drawable.logo_final)
+            binding.image.loadImage(Constants.BASE_IMAGES_URL  + model.branchImagePath , R.drawable.logo_final)
 
 
             itemView.setOnClickListener{

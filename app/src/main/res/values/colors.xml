@@ -143,6 +143,25 @@
     <color name="rPrimaryColor">#005071</color>
     <color name="rBlackColor">#000000</color>
     <color name="rSecondryTxtColor">#4C5C75</color>
+    <color name="rFilterCardColor">#2699D6</color>
+    <color name="rBorderGrayColor">#C3C5CC</color>
+    <color name="rTxtSecondaryColor">#727E90</color>
+    <color name="rTxtDarkColor">#00102B</color>
+    <color name="rTxtDarkBlueColor">#1D2943</color>
+    <color name="rTxtSecoundBlueColor">#9D9FA0</color>
+    <color name="rTxtSecoundDarkColor">#393939</color>
+    <color name="rGray10Color">#1AAAB2BD</color>
+    <color name="rGrayColor">#949DA9</color>
+    <color name="rGreenColor">#00BB75</color>
+    <color name="rGreen14Color">#2400BB75</color>
+    <color name="rReedColor">#F24949</color>
+    <color name="rReed14Color">#21F24949</color>
+    <color name="rBlueColor">#2699D6</color>
+    <color name="rBlue14Color">#242699D6</color>
+    <color name="rDarkBlueColor">#0F5AD5</color>
+    <color name="rDarkBlue14Color">#240F5AD5</color>
+    <color name="rGray27Color">#45AAB2BD</color>
+    <color name="rnoShowColor">#8B9198</color>
 
 
 

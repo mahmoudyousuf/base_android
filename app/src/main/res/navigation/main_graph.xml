@@ -12,6 +12,16 @@
         tools:layout="@layout/fragment_home">
 
 
+        <action
+            android:id="@+id/openappointmentDetailsFragment"
+            app:destination="@id/appointmentDetailsFragment">
+            <argument
+                android:name="appointmentId"
+                app:argType="string" />
+
+        </action>
+
+
     </fragment>
 
 
@@ -41,6 +51,26 @@
 
 
     </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/appointmentDetailsFragment"
+        android:name="rubikans.rubik.doctor.ui.main.home.appointmentDetails.AppointmentDetailsFragment"
+        android:label="appointmentDetailsFragment"
+        tools:layout="@layout/fragment_appointment_details">
+
+        <argument
+            android:name="appointmentId"
+            app:argType="string" />
+
+
+
+
+
+    </fragment>
+
 
 
 </navigation>

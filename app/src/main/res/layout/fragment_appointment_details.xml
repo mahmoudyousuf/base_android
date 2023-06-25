@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <rubikans.rubik.doctor.custom_views.CustomTopBar
+            android:id="@+id/customBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/titleTxt"
+            style="@style/TitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/rBlackColor"
+            android:text="@string/appointment_details"
+            android:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customBar"/>
+
+
+        <TextView
+            android:id="@+id/patientInfoTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="38dp"
+            android:textSize="16sp"
+            android:textColor="@color/rTxtDarkBlueColor"
+            android:text="@string/patient_information"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleTxt"/>
+
+
+        <TextView
+            android:id="@+id/patientNameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/name_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/patientInfoTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvPatientNameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/rTxtSecoundDarkColor"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/patientNameTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.005"
+            app:layout_constraintStart_toEndOf="@id/patientNameTxt"
+            app:layout_constraintTop_toTopOf="@id/patientNameTxt"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Mahmoud Youssef" />
+
+
+        <TextView
+            android:id="@+id/patientMobileTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/phone_number_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPatientNameTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvPatientMobileTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rDarkBlueColor"
+            tools:text="0123456789"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toTopOf="@id/patientMobileTxt"
+            app:layout_constraintBottom_toBottomOf="@id/patientMobileTxt"
+            app:layout_constraintStart_toEndOf="@id/patientMobileTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+
+        <TextView
+            android:id="@+id/patientIdTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/id_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPatientMobileTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvPatientIdTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundDarkColor"
+            tools:text="#123456789"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toTopOf="@id/patientIdTxt"
+            app:layout_constraintBottom_toBottomOf="@id/patientIdTxt"
+            app:layout_constraintStart_toEndOf="@id/patientIdTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+
+
+        <TextView
+            android:id="@+id/patientBirthDateTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/birthdate_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPatientIdTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvPatientBirthDateTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundDarkColor"
+            tools:text="1/10/1999"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toTopOf="@id/patientBirthDateTxt"
+            app:layout_constraintBottom_toBottomOf="@id/patientBirthDateTxt"
+            app:layout_constraintStart_toEndOf="@id/patientBirthDateTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+
+        <TextView
+            android:id="@+id/patientHeightTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/height_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPatientBirthDateTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvPatientHeightTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundDarkColor"
+            tools:text="160Cm"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toTopOf="@id/patientHeightTxt"
+            app:layout_constraintBottom_toBottomOf="@id/patientHeightTxt"
+            app:layout_constraintStart_toEndOf="@id/patientHeightTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+
+        <TextView
+            android:id="@+id/patientWeightTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/weight_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPatientHeightTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvPatientWeightTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundDarkColor"
+            tools:text="50KG"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toTopOf="@id/patientWeightTxt"
+            app:layout_constraintBottom_toBottomOf="@id/patientWeightTxt"
+            app:layout_constraintStart_toEndOf="@id/patientWeightTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/appointmentInfoTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="38dp"
+            android:textSize="16sp"
+            android:textColor="@color/rTxtDarkBlueColor"
+            android:text="@string/appointment_information"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPatientWeightTxt"/>
+
+
+
+
+        <TextView
+            android:id="@+id/serviceTypeTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/services_type_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appointmentInfoTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvServiceTypeTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundDarkColor"
+            tools:text=" Consultation"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toTopOf="@id/serviceTypeTxt"
+            app:layout_constraintBottom_toBottomOf="@id/serviceTypeTxt"
+            app:layout_constraintStart_toEndOf="@id/serviceTypeTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+
+        <TextView
+            android:id="@+id/statusTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/status_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvServiceTypeTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvStatusTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/rTxtSecoundDarkColor"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/statusTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/statusTxt"
+            app:layout_constraintTop_toTopOf="@id/statusTxt"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text=" done" />
+
+        <TextView
+            android:id="@+id/dateTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/date_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStatusTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvDateTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/rTxtSecoundDarkColor"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/dateTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/dateTxt"
+            app:layout_constraintTop_toTopOf="@id/dateTxt"
+
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="20 Nov , 2022" />
+
+        <TextView
+            android:id="@+id/durationTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/duration_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDateTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvDurationTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundDarkColor"
+            tools:text="30 m"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toTopOf="@id/durationTxt"
+            app:layout_constraintBottom_toBottomOf="@id/durationTxt"
+            app:layout_constraintStart_toEndOf="@id/durationTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/amountTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/amount_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDurationTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvAmountTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundDarkColor"
+            tools:text="100 EGP"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toTopOf="@id/amountTxt"
+            app:layout_constraintBottom_toBottomOf="@id/amountTxt"
+            app:layout_constraintStart_toEndOf="@id/amountTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/paymentStatusTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/payment_status_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAmountTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvPaymentStatusTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundDarkColor"
+            tools:text="Payed"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toTopOf="@id/paymentStatusTxt"
+            app:layout_constraintBottom_toBottomOf="@id/paymentStatusTxt"
+            app:layout_constraintStart_toEndOf="@id/paymentStatusTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/paymentMethodTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/payment_method_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPaymentStatusTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvPaymentMethodTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundDarkColor"
+            tools:text="visa"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toTopOf="@id/paymentMethodTxt"
+            app:layout_constraintBottom_toBottomOf="@id/paymentMethodTxt"
+            app:layout_constraintStart_toEndOf="@id/paymentMethodTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/extraPhoneNumberTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            android:text="@string/extra_phone_number_"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPaymentMethodTxt"/>
+
+
+        <TextView
+            android:id="@+id/tvExtraPhoneNumberTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/rDarkBlueColor"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/extraPhoneNumberTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/extraPhoneNumberTxt"
+            app:layout_constraintTop_toTopOf="@id/extraPhoneNumberTxt"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="01025478963" />
+
+        <TextView
+            android:id="@+id/patientProblemTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="38dp"
+            android:textSize="16sp"
+            android:textColor="@color/rTxtDarkBlueColor"
+            android:text="@string/patient_problem"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvExtraPhoneNumberTxt"/>
+
+
+
+        <TextView
+            android:id="@+id/tvPatientProblemTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="36dp"
+            android:textSize="14sp"
+            android:textColor="@color/rTxtSecoundBlueColor"
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ostrud Lorem ipsum dolor sit amet, consectetur"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/patientProblemTxt"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

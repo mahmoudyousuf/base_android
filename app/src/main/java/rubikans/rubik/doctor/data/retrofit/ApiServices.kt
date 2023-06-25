@@ -4,6 +4,7 @@ import com.google.gson.JsonObject
 import retrofit2.Response
 import retrofit2.http.*
 import rubikans.rubik.doctor.base.BaseResponse
+import rubikans.rubik.doctor.model.AppointmentsData
 import rubikans.rubik.doctor.model.ClinicBranchesDataItem
 
 
@@ -55,6 +56,40 @@ interface ApiServices {
     suspend fun getClinicBranches(
     ): Response<BaseResponse<ArrayList<ClinicBranchesDataItem>>>
 
+
+
+    @Headers("Accept: application/json")
+    @GET("api/Bookings/GetAppointment")
+    suspend fun getAppointments(
+        @Query("pPageNumber")   pPageNumber: Int,
+        @Query("pBranchId")     pBranchId: String,
+        @Query("pBookingID")    pBookingID: String,
+        @Query("pPatientID")    pPatientID: String,
+        @Query("pStatusID")     pStatusID: String,
+        @Query("pDateFrom")     pDateFrom: String,
+        @Query("pDateTo")       pDateTo: String,
+        @Query("pSearchText")   pSearchText: String,
+        @Query("pPageSize")     pPageSize: Int = 10,
+        ): Response<BaseResponse<AppointmentsData>>
+
+
+
+    @Headers("Accept: application/json")
+    @GET("api/Bookings/GetAppointment")
+    suspend fun getAppointmentsDetails(
+        @Query("pBranchId")     pBranchId: String,
+        @Query("pBookingID")    pBookingID: String,
+    ): Response<BaseResponse<AppointmentsData>>
+
+
+
+
+    @Headers("Accept: application/json")
+    @GET("api/Bookings/ChangeBookingStatus")
+    suspend fun changeAppointmentStatus(
+        @Query("pBookingID")     pBookingID: String,
+        @Query("pStatus")    pStatus: String,
+    ): Response<BaseResponse<BaseResponse.EmptyData>>
 
 
 

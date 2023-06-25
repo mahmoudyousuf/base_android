@@ -60,10 +60,10 @@ abstract class BaseActivity<T : ViewDataBinding?> : AppCompatActivity() {
         createCustomProgressDialog()
         dataManager = (application as BaseApplication).dataManager!!
 
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_SECURE,
-            WindowManager.LayoutParams.FLAG_SECURE
-        )
+//        window.setFlags(
+//            WindowManager.LayoutParams.FLAG_SECURE,
+//            WindowManager.LayoutParams.FLAG_SECURE
+//        )
 
         performDataBinding()
 
