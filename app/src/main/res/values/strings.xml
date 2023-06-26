@@ -138,6 +138,7 @@
     <string name="are_you_sure_change_status">Are you sure you want to change the status ?</string>
     <string name="phone_number_">Phone Number :</string>
     <string name="reset">Reset</string>
+    <string name="search_">Search…</string>
 
 
 </resources>

@@ -140,6 +140,9 @@
     <string name="are_you_sure_change_status">هل ان متأكد انك تود تغير حالة الموعد ؟</string>
     <string name="phone_number_">رقم التليفون :</string>
     <string name="reset">اعادة تعيين</string>
+    <string name="search_">بحث…</string>
+
+
 
 
     <string name="check_internet_connection">Check your internet connection</string>

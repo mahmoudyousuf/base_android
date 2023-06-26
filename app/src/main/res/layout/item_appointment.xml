@@ -32,10 +32,11 @@
 
             <TextView
                 android:id="@+id/tvNameTxt"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="18dp"
+                android:maxWidth="220dp"
                 android:fontFamily="@font/poppins_semi_bold"
                 tools:text="Mahmoud youssef"
                 android:textColor="@color/rBlackColor"
