@@ -57,7 +57,7 @@ class AppointmentsAdapter(
         @SuppressLint("SetTextI18n")
         fun bind(model: AppointmentItem) {
             binding.tvNameTxt.text = model.patientName
-            binding.tvIdTxt.text = "#${model.bookingID.toString()}"
+            binding.tvIdTxt.text = "#${model.bookingNo.toString()}"
 
 
             if (model.isPaied == true){
