@@ -164,6 +164,7 @@
     <string name="insurance_">Insurance:</string>
     <string name="first_appointment_">First Appointment :</string>
     <string name="last_appointment_">Last Appointment :</string>
+    <string name="ok">Ok</string>
 
 
 </resources>
