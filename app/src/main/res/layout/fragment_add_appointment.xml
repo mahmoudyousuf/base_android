@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <rubikans.rubik.doctor.custom_views.CustomTopBar
+            android:id="@+id/customBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/makeAppointmentTxt"
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:textColor="@color/txt_black_color"
+            android:text="@string/make_appointments"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customBar" />
+
+
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/makeAppointmentTxt"
+           >
+
+
+
+           <rubikans.rubik.doctor.custom_views.RubikDropdownMenu
+               android:id="@+id/serviceTypeDropDown"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:hint_ed="@string/service_type"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               >
+           </rubikans.rubik.doctor.custom_views.RubikDropdownMenu>
+
+
+           <rubikans.rubik.doctor.custom_views.RubikDropdownMenu
+               android:id="@+id/patientNameDropDown"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:hint_ed="@string/patient_name"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/serviceTypeDropDown"
+               >
+           </rubikans.rubik.doctor.custom_views.RubikDropdownMenu>
+
+
+           <rubikans.rubik.doctor.custom_views.RubikEditText
+               android:id="@+id/amountEdtTxt"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:hint_ed="@string/amount"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/patientNameDropDown"
+               >
+
+           </rubikans.rubik.doctor.custom_views.RubikEditText>
+
+
+
+           <rubikans.rubik.doctor.custom_views.RubikDropdownMenu
+               android:id="@+id/paymentMethodDropDown"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:hint_ed="@string/payment_method"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/amountEdtTxt"
+               >
+           </rubikans.rubik.doctor.custom_views.RubikDropdownMenu>
+
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/patientComplaintLayout"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               app:boxCornerRadiusBottomEnd="30dp"
+               app:boxCornerRadiusTopEnd="30dp"
+               app:boxCornerRadiusBottomStart="30dp"
+               app:boxCornerRadiusTopStart="30dp"
+               android:layout_marginStart="5dp"
+               android:layout_marginEnd="5dp"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               app:errorIconDrawable="@null"
+               android:hint="@string/patient_problem"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/paymentMethodDropDown"
+               >
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/patientComplaintEdt"
+                   android:layout_width="match_parent"
+                   app:errorIconDrawable="@null"
+                   android:height="94dp"
+                   android:layout_height="wrap_content" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+
+
+           <rubikans.rubik.doctor.custom_views.RubikEditText
+               android:id="@+id/appointDateEdt"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:focusable="false"
+               app:hint_ed="@string/date_of_appointment"
+               android:layout_marginTop="16dp"
+               android:textSize="12sp"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/patientComplaintLayout"
+
+               >
+
+
+
+           </rubikans.rubik.doctor.custom_views.RubikEditText>
+
+
+
+
+           <TextView
+               android:id="@+id/timeOfAppointmentTxt"
+               style="@style/TitleText"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="8dp"
+               android:textSize="16sp"
+               android:textColor="@color/txt_black_color"
+               android:text="@string/time_off_appointment"
+               android:fontFamily="@font/poppins_regular"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/appointDateEdt" />
+
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/timeList"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="16dp"
+               app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/timeOfAppointmentTxt"
+               app:spanCount="3"
+               tools:listitem="@layout/item_time" />
+
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:id="@+id/firstComeDataLayout"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/timeList"
+               >
+
+               <TextView
+                   android:id="@+id/numberOfCaseTxt"
+                   style="@style/TitleText"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="16dp"
+                   android:textSize="16sp"
+                   android:textColor="@color/rTxtSecondaryColor"
+                   android:text="@string/number_of_cases"
+                   android:fontFamily="@font/poppins_regular"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"/>
+
+               <TextView
+                   android:id="@+id/tvNumberOfCaseTxt"
+                   style="@style/TitleText"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="5dp"
+                   android:textSize="16sp"
+                   android:textColor="@color/rTxtSecondaryColor"
+                   tools:text="10"
+                   android:fontFamily="@font/poppins_regular"
+                   app:layout_constraintStart_toEndOf="@id/numberOfCaseTxt"
+                   app:layout_constraintTop_toTopOf="@id/numberOfCaseTxt"
+                   app:layout_constraintBottom_toBottomOf="@id/numberOfCaseTxt"
+                   />
+
+
+
+
+               <TextView
+                   android:id="@+id/numberOfReservationTxt"
+                   style="@style/TitleText"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="16dp"
+                   android:textSize="16sp"
+                   android:textColor="@color/rTxtSecondaryColor"
+                   android:text="@string/number_of_reservations"
+                   android:fontFamily="@font/poppins_regular"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/numberOfCaseTxt"/>
+
+               <TextView
+                   android:id="@+id/tvNumberOfReservationTxt"
+                   style="@style/TitleText"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="5dp"
+                   android:textSize="16sp"
+                   android:textColor="@color/rTxtSecondaryColor"
+                   tools:text="0"
+                   android:fontFamily="@font/poppins_regular"
+                   app:layout_constraintStart_toEndOf="@id/numberOfReservationTxt"
+                   app:layout_constraintTop_toTopOf="@id/numberOfReservationTxt"
+                   app:layout_constraintBottom_toBottomOf="@id/numberOfReservationTxt"
+                   />
+
+
+
+
+
+               <TextView
+                   android:id="@+id/availableRemainingCasesTxt"
+                   style="@style/TitleText"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="16dp"
+                   android:textSize="16sp"
+                   android:textColor="@color/rTxtSecondaryColor"
+                   android:text="@string/available_remaining_cases"
+                   android:fontFamily="@font/poppins_regular"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/numberOfReservationTxt"/>
+
+               <TextView
+                   android:id="@+id/tvAvailableRemainingCasesTxt"
+                   style="@style/TitleText"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="5dp"
+                   android:textSize="16sp"
+                   android:textColor="@color/rTxtSecondaryColor"
+                   tools:text="10"
+                   android:fontFamily="@font/poppins_regular"
+                   app:layout_constraintStart_toEndOf="@id/availableRemainingCasesTxt"
+                   app:layout_constraintTop_toTopOf="@id/availableRemainingCasesTxt"
+                   app:layout_constraintBottom_toBottomOf="@id/availableRemainingCasesTxt"
+                   />
+
+
+
+           </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+           <androidx.appcompat.widget.AppCompatButton
+               style="@style/ButtonRedOutlineColored"
+               android:id="@+id/confirmBtn"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:text="@string/book"
+               android:layout_marginTop="50dp"
+               android:layout_marginBottom="50dp"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/firstComeDataLayout"
+               app:layout_constraintBottom_toBottomOf="parent"
+               />
+
+
+
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

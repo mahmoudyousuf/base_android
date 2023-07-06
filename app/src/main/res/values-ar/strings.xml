@@ -145,6 +145,38 @@
 
 
 
+
+    <string name="make_appointments">حجز موعد</string>
+    <string name="service_type">نوع الخدمة</string>
+    <string name="patient_name">اسم المريض</string>
+    <string name="amount">القيمة</string>
+    <string name="payment_method">طريقة الدفع</string>
+    <string name="date_of_appointment">تاريخ الموعد</string>
+    <string name="time_off_appointment">معاد الموعد</string>
+    <string name="booked">محجوز</string>
+    <string name="no_match_found">لا يوجد بيانات</string>
+    <string name="number_of_cases">عدد الحالات : </string>
+    <string name="number_of_reservations">عدد الحجوزات :</string>
+    <string name="available_remaining_cases">عدد الحالات المتبقية :</string>
+    <string name="book">حجز</string>
+    <string name="appointment_has_been_scheduled_successfully">تم حجز الموعد بنجاح!</string>
+    <string name="consultation_service_are_required">نوع الخدمة مطلوب</string>
+    <string name="patient_name_are_required">اسم المريض مطلوب</string>
+    <string name="payment_method_are_required">طريقة الدفع مطلوبه</string>
+    <string name="appointment_date_are_required">تاريخ الحجز مطلوب</string>
+    <string name="select_appointment_time_first">اخر ميعد الحجز اولا</string>
+    <string name="no_available_appointments_at_this_day">لا يوجد مواعيد متاحة في هذا اليوم</string>
+    <string name="select_consultation_service_first">اختر نوع الخدمه اولا</string>
+    <string name="you_should_complete_clinic_setting_first">قبل إضافة حجوزات، من فضلك اكمل اعدادات العيادة من خلال نسخة البرنامج الموجهه للكمبيوتر</string>
+    <string name="insurance_">تامين :</string>
+    <string name="first_appointment_">اول حجز :</string>
+    <string name="last_appointment_">آخر حجز</string>
+
+
+
+
+
+
     <string name="check_internet_connection">Check your internet connection</string>
     <string name="some_thing_went_wrong_error_msg">Something went wrong, Please try again</string>
 

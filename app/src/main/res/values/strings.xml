@@ -139,6 +139,31 @@
     <string name="phone_number_">Phone Number :</string>
     <string name="reset">Reset</string>
     <string name="search_">Search…</string>
+    <string name="make_appointments">Make Appointments</string>
+    <string name="service_type">Services Type</string>
+    <string name="patient_name">Patient Name</string>
+    <string name="amount">Amount</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="date_of_appointment">Date Of Appointment</string>
+    <string name="time_off_appointment">Time off appointment</string>
+    <string name="booked">Booked</string>
+    <string name="no_match_found">No Match found</string>
+    <string name="number_of_cases">Number Of Cases :</string>
+    <string name="number_of_reservations">Number Of Reservations :</string>
+    <string name="available_remaining_cases">Available Remaining Cases :</string>
+    <string name="book">Book</string>
+    <string name="appointment_has_been_scheduled_successfully">Appointment has been scheduled successfully!</string>
+    <string name="consultation_service_are_required">Consultation service are required</string>
+    <string name="patient_name_are_required">Patient name is required</string>
+    <string name="payment_method_are_required">Payment method is required</string>
+    <string name="appointment_date_are_required">Appointment date is required</string>
+    <string name="select_appointment_time_first">select appointment time first</string>
+    <string name="no_available_appointments_at_this_day">No available appointments at this day</string>
+    <string name="select_consultation_service_first">Select consultation service first</string>
+    <string name="you_should_complete_clinic_setting_first">Before adding an appointment, please complete the clinic setup on web through your computer</string>
+    <string name="insurance_">Insurance:</string>
+    <string name="first_appointment_">First Appointment :</string>
+    <string name="last_appointment_">Last Appointment :</string>
 
 
 </resources>

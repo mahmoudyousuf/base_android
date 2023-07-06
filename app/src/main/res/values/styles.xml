@@ -130,7 +130,6 @@
     <style name="ButtonRedOutlineColored">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">5dp</item>
         <item name="android:background">@drawable/rounded_corner_colored</item>
         <item name="android:textColor">@color/white</item>
 
@@ -156,7 +155,9 @@
                 <item name="android:layout_marginTop">22sp</item>-->
     </style>
 
-
+    <style name="RoundedCornersDialog" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="dialogCornerRadius">16dp</item>
+    </style>
 
 
 

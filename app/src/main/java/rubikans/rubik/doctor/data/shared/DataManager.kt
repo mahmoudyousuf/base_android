@@ -183,7 +183,15 @@ class DataManager(context: Context?) {
 
     ////////////////////////////////////////////////////////////////////////////////
 
+    fun saveIsRefreshHome(x: String) {
+        mSharedPreferences!!.edit().putString(REFRESHHOME, x).apply()
+    }
 
+    val refreshHome: String?
+        get() = mSharedPreferences!!.getString(REFRESHHOME, "0")
+
+
+    ///////////////////////////////////////////////////////////////////
 
 
 
@@ -196,6 +204,7 @@ class DataManager(context: Context?) {
         const val Profile = "Profile"
         const val CLINIC = "CLINIC"
         const val TOKEN = "TOKEN"
+        const val REFRESHHOME = "REFRESHHOME"
         const val FCMTOKEN = "FCMTOKEN"
         const val LOGIN = "LOGIN"
         const val LANG = "LANG"

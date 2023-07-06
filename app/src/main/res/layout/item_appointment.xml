@@ -122,6 +122,20 @@
                 app:layout_constraintBottom_toBottomOf="@id/paymentStatusTxt"
                 />
 
+            <TextView
+                android:id="@+id/tvOnlineOrOfflineTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                tools:text="online"
+                android:textColor="@color/rGrayOnlineColor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/statusLayout"
+                app:layout_constraintStart_toStartOf="@id/statusLayout"
+                app:layout_constraintTop_toTopOf="@id/paymentStatusTxt"
+                app:layout_constraintBottom_toBottomOf="@id/paymentStatusTxt"
+                />
+
 
 
             <TextView

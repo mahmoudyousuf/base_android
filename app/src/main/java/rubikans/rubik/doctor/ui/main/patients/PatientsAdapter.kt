@@ -1,4 +1,4 @@
-package rubikans.rubik.doctor.ui.main.home
+package rubikans.rubik.doctor.ui.main.patients
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -18,7 +18,7 @@ import rubikans.rubik.doctor.util.extensions.hide
 import rubikans.rubik.doctor.util.extensions.visible
 
 
-class AppointmentsAdapter(
+class PatientsAdapter(
     private val context: Context,
     private val onItemClicked: (model: AppointmentItem) -> Unit,
     private val onConfirmClicked: (model: AppointmentItem) -> Unit,
@@ -27,7 +27,7 @@ class AppointmentsAdapter(
     private val onDoneClicked: (model: AppointmentItem) -> Unit,
     private val onOnServiceClicked: (model: AppointmentItem) -> Unit,
 
-    ) : PagingDataAdapter<AppointmentItem, AppointmentsAdapter.ViewHolder>(AppointmentItem.CALLBACK) {
+    ) : PagingDataAdapter<AppointmentItem, PatientsAdapter.ViewHolder>(AppointmentItem.CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -78,12 +78,6 @@ class AppointmentsAdapter(
             }
             else if(model.bookingDate != null && model.startTime != null){
                 binding.tvDateTxt.text = CommonUtilities.convertFullDateToFormattedDateTxtWithoutTime(model.bookingDate) + "-" +CommonUtilities.convertTimeToFormattedTimeTxt(model.startTime)
-            }
-
-            binding.tvOnlineOrOfflineTxt.text = model.clinicOnline
-
-            if(model.clinicOnline == "Online"){
-                binding.tvOnlineOrOfflineTxt.setTextColor(ContextCompat.getColor(context, R.color.rDarkBlueColor))
             }
 
 

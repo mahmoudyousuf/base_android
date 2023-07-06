@@ -22,6 +22,28 @@
         </action>
 
 
+
+
+        <action
+            android:id="@+id/openMakeAppointmentFragment"
+            app:destination="@id/makeAppointmentFragment">
+
+
+        </action>
+
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/PatientFragment"
+        android:name="rubikans.rubik.doctor.ui.main.patients.PatientsFragment"
+        android:label="PatientFragment"
+        tools:layout="@layout/fragment_patients">
+
+
+
     </fragment>
 
 
@@ -68,6 +90,17 @@
 
 
 
+
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/makeAppointmentFragment"
+        android:name="rubikans.rubik.doctor.ui.main.makeAppointment.MakeAppointmentFragment"
+        android:label="makeAppointmentFragment"
+        tools:layout="@layout/fragment_add_appointment">
 
     </fragment>
 

@@ -1,4 +1,4 @@
-package rubikans.rubik.doctor.ui.main.home
+package rubikans.rubik.doctor.ui.main.patients
 
 import android.content.Context
 import com.google.gson.JsonObject
@@ -12,7 +12,7 @@ import rubikans.rubik.doctor.model.CheckClinicSettingModelItem
 
 import javax.inject.Inject
 
-class HomeRepository @Inject constructor(
+class PatientsRepository @Inject constructor(
     private val context: Context,
     private val dataManager: DataManager,
     private val api: ApiServices

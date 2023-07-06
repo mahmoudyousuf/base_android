@@ -19,6 +19,8 @@ import rubikans.rubik.doctor.ui.main.clinicBraches.ClinicBranchesRepository
 import rubikans.rubik.doctor.ui.main.changePassword.ChangePasswordRepository
 import rubikans.rubik.doctor.ui.main.home.HomeRepository
 import rubikans.rubik.doctor.ui.main.home.appointmentDetails.AppointmentDetailsRepository
+import rubikans.rubik.doctor.ui.main.makeAppointment.MakeAppointmentRepository
+import rubikans.rubik.doctor.ui.main.patients.PatientsRepository
 import javax.inject.Singleton
 
 
@@ -131,6 +133,27 @@ object Repository {
 
 
 
+
+    @Singleton
+    @Provides
+    fun makeAppointmentRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): MakeAppointmentRepository =
+        MakeAppointmentRepository(appContext, dataManager,api)
+
+
+
+
+    @Singleton
+    @Provides
+    fun patientsRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): PatientsRepository =
+        PatientsRepository(appContext, dataManager,api)
 
 
 }

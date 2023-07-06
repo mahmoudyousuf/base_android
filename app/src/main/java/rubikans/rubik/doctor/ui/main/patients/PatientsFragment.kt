@@ -1,4 +1,4 @@
-package rubikans.rubik.doctor.ui.main.home
+package rubikans.rubik.doctor.ui.main.patients
 
 import android.content.Intent
 import android.os.Bundle
@@ -33,11 +33,11 @@ import java.util.*
 
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>(),
+class PatientsFragment : BaseFragment<FragmentHomeBinding>(),
     SearchView.OnQueryTextListener {
     lateinit var binding: FragmentHomeBinding
-    val viewModel: HomeViewModel by activityViewModels()
-    private lateinit var adapter: AppointmentsAdapter
+    val viewModel: PatientsViewModel by activityViewModels()
+    private lateinit var adapter: PatientsAdapter
     var charCount = 0
 
 
@@ -114,11 +114,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
         }
 
 
-        adapter = AppointmentsAdapter(baseActivity,
+        adapter = PatientsAdapter(baseActivity,
             onItemClicked = {
 
 
-                navController.navigate(HomeFragmentDirections.openappointmentDetailsFragment(it.bookingID.toString()))
+//                navController.navigate(HomeFragmentDirections.openappointmentDetailsFragment(it.bookingID.toString()))
 
             },
 
@@ -379,7 +379,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
 
 
                     if(response.data!![0].columnType == 1){
-                        navController.navigate(HomeFragmentDirections.openMakeAppointmentFragment())
+//                        navController.navigate(HomeFragmentDirections.openMakeAppointmentFragment())
 
                     }else{
 

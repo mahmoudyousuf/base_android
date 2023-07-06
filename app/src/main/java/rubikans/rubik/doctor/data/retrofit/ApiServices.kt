@@ -4,8 +4,7 @@ import com.google.gson.JsonObject
 import retrofit2.Response
 import retrofit2.http.*
 import rubikans.rubik.doctor.base.BaseResponse
-import rubikans.rubik.doctor.model.AppointmentsData
-import rubikans.rubik.doctor.model.ClinicBranchesDataItem
+import rubikans.rubik.doctor.model.*
 
 
 interface ApiServices {
@@ -92,6 +91,61 @@ interface ApiServices {
     ): Response<BaseResponse<BaseResponse.EmptyData>>
 
 
+
+
+    @Headers("Accept: application/json")
+    @GET("api/Bookings/GetDoctorAvailableAppointment")
+    suspend fun getAppointmentsTimes(
+        @Query("pEntityBranchID")           pEntityBranchID: String,
+        @Query("pConsultationServicesID")   pConsultationServicesID: String,
+        @Query("pDate")                     pDate: String ,
+    ): Response<BaseResponse<ArrayList<AppointmentsTimesModelItem>>>
+
+
+
+
+    @Headers("Accept: application/json")
+    @GET("api/Branch/GetBranchConsultationServices")
+    suspend fun getConsultationServices(
+        @Query("pBranchId")           pBranchId: String,
+
+    ): Response<BaseResponse<ArrayList<ConsultationServicesModelItem>>>
+
+
+
+    @Headers("Accept: application/json")
+    @GET("api/profiles/GetCollectionData")
+    suspend fun getPaymentMethods(
+        @Query("pOption") pOption: String = "6"
+    ): Response<BaseResponse<PaymentMethodsModel>>
+
+
+
+    @Headers("Accept: application/json")
+    @GET("api/Profiles/GetPatientByBranchID")
+    suspend fun getSelectPatientList(
+        @Query("pBranchID")           pBranchID: String,
+
+        ): Response<BaseResponse<ArrayList<SelectPatientModelItem>>>
+
+
+
+    @Headers("Accept: application/json")
+    @POST("api/Bookings/AddAppointment")
+    suspend fun addAppointment(
+        @Body props: JsonObject
+    ): Response<BaseResponse<BaseResponse.EmptyData>>
+
+
+
+
+
+    @Headers("Accept: application/json")
+    @GET("api/Branch/CheckClinicSetting")
+    suspend fun checkClinicSetting(
+        @Query("pEntityBranchID")           pEntityBranchID: String,
+
+        ): Response<BaseResponse<ArrayList<CheckClinicSettingModelItem>>>
 
 
 }

@@ -1,4 +1,4 @@
-package rubikans.rubik.doctor.ui.main.home
+package rubikans.rubik.doctor.ui.main.patients
 
 import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
@@ -18,8 +18,8 @@ import rubikans.rubik.doctor.model.AppointmentItem
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
-    private val repository: HomeRepository,
+class PatientsViewModel @Inject constructor(
+    private val repository: PatientsRepository,
     val dataManager: DataManager
 
 ) : BaseViewModel(repository) {
@@ -36,7 +36,7 @@ class HomeViewModel @Inject constructor(
     var appointmentsList = getAppointments()
     fun getAppointments(): Flow<PagingData<AppointmentItem>> {
         return Pager(config = PagingConfig(pageSize = 10, enablePlaceholders = false),
-            pagingSourceFactory = { AppointmentsDataSource(this, repository) }).flow.cachedIn(
+            pagingSourceFactory = { PatientsDataSource(this, repository) }).flow.cachedIn(
             viewModelScope
         )
     }

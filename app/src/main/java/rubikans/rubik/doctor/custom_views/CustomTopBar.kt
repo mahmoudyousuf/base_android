@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.withStyledAttributes
+import kotlinx.android.synthetic.main.custon_top_bar.view.*
 import rubikans.rubik.doctor.R
 import rubikans.rubik.doctor.util.extensions.hide
 import rubikans.rubik.doctor.util.extensions.visible
@@ -38,6 +39,11 @@ class CustomTopBar @JvmOverloads constructor(
     }
     fun visibleNotificationIcon() {
         notificationCardView.visible()
+    }
+
+
+    fun visibleAddIcon() {
+        addCardView.visible()
     }
 
     fun visableNotificationCount() {

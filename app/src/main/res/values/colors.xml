@@ -162,6 +162,8 @@
     <color name="rDarkBlue14Color">#240F5AD5</color>
     <color name="rGray27Color">#45AAB2BD</color>
     <color name="rnoShowColor">#8B9198</color>
+    <color name="rTextBlackColor">#171717</color>
+    <color name="rGrayOnlineColor">#B0B8CF</color>
 
 
 
