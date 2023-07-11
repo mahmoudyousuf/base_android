@@ -1,6 +1,8 @@
 package rubikans.rubik.doctor.data.retrofit
 
 import com.google.gson.JsonObject
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.*
 import rubikans.rubik.doctor.base.BaseResponse
@@ -44,7 +46,6 @@ interface ApiServices {
     ): Response<BaseResponse<BaseResponse.EmptyData>>
 
 
-
     @Headers("Accept: application/json")
     @POST("api/Authentication/ChangePasswordWithoutForget")
     suspend fun changePassword(@Body props: JsonObject): Response<BaseResponse<BaseResponse.EmptyData>>
@@ -56,61 +57,52 @@ interface ApiServices {
     ): Response<BaseResponse<ArrayList<ClinicBranchesDataItem>>>
 
 
-
     @Headers("Accept: application/json")
     @GET("api/Bookings/GetAppointment")
     suspend fun getAppointments(
-        @Query("pPageNumber")   pPageNumber: Int,
-        @Query("pBranchId")     pBranchId: String,
-        @Query("pBookingID")    pBookingID: String,
-        @Query("pPatientID")    pPatientID: String,
-        @Query("pStatusID")     pStatusID: String,
-        @Query("pDateFrom")     pDateFrom: String,
-        @Query("pDateTo")       pDateTo: String,
-        @Query("pSearchText")   pSearchText: String,
-        @Query("pPageSize")     pPageSize: Int = 10,
-        ): Response<BaseResponse<AppointmentsData>>
-
+        @Query("pPageNumber") pPageNumber: Int,
+        @Query("pBranchId") pBranchId: String,
+        @Query("pBookingID") pBookingID: String,
+        @Query("pPatientID") pPatientID: String,
+        @Query("pStatusID") pStatusID: String,
+        @Query("pDateFrom") pDateFrom: String,
+        @Query("pDateTo") pDateTo: String,
+        @Query("pSearchText") pSearchText: String,
+        @Query("pPageSize") pPageSize: Int = 10,
+    ): Response<BaseResponse<AppointmentsData>>
 
 
     @Headers("Accept: application/json")
     @GET("api/Bookings/GetAppointment")
     suspend fun getAppointmentsDetails(
-        @Query("pBranchId")     pBranchId: String,
-        @Query("pBookingID")    pBookingID: String,
+        @Query("pBranchId") pBranchId: String,
+        @Query("pBookingID") pBookingID: String,
     ): Response<BaseResponse<AppointmentsData>>
-
-
 
 
     @Headers("Accept: application/json")
     @GET("api/Bookings/ChangeBookingStatus")
     suspend fun changeAppointmentStatus(
-        @Query("pBookingID")     pBookingID: String,
-        @Query("pStatus")    pStatus: String,
+        @Query("pBookingID") pBookingID: String,
+        @Query("pStatus") pStatus: String,
     ): Response<BaseResponse<BaseResponse.EmptyData>>
-
-
 
 
     @Headers("Accept: application/json")
     @GET("api/Bookings/GetDoctorAvailableAppointment")
     suspend fun getAppointmentsTimes(
-        @Query("pEntityBranchID")           pEntityBranchID: String,
-        @Query("pConsultationServicesID")   pConsultationServicesID: String,
-        @Query("pDate")                     pDate: String ,
+        @Query("pEntityBranchID") pEntityBranchID: String,
+        @Query("pConsultationServicesID") pConsultationServicesID: String,
+        @Query("pDate") pDate: String,
     ): Response<BaseResponse<ArrayList<AppointmentsTimesModelItem>>>
-
-
 
 
     @Headers("Accept: application/json")
     @GET("api/Branch/GetBranchConsultationServices")
     suspend fun getConsultationServices(
-        @Query("pBranchId")           pBranchId: String,
+        @Query("pBranchId") pBranchId: String,
 
-    ): Response<BaseResponse<ArrayList<ConsultationServicesModelItem>>>
-
+        ): Response<BaseResponse<ArrayList<ConsultationServicesModelItem>>>
 
 
     @Headers("Accept: application/json")
@@ -120,14 +112,12 @@ interface ApiServices {
     ): Response<BaseResponse<PaymentMethodsModel>>
 
 
-
     @Headers("Accept: application/json")
     @GET("api/Profiles/GetPatientByBranchID")
     suspend fun getSelectPatientList(
-        @Query("pBranchID")           pBranchID: String,
+        @Query("pBranchID") pBranchID: String,
 
         ): Response<BaseResponse<ArrayList<SelectPatientModelItem>>>
-
 
 
     @Headers("Accept: application/json")
@@ -137,15 +127,120 @@ interface ApiServices {
     ): Response<BaseResponse<BaseResponse.EmptyData>>
 
 
+    @Headers("Accept: application/json")
+    @GET("api/Branch/CheckClinicSetting")
+    suspend fun checkClinicSetting(
+        @Query("pEntityBranchID") pEntityBranchID: String,
+
+        ): Response<BaseResponse<ArrayList<CheckClinicSettingModelItem>>>
+
+
+    @Headers("Accept: application/json")
+    @GET("api/Profiles/GetPatient")
+    suspend fun getPatientList(
+        @Query("pEntityBranchID")    pEntityBranchID: String,
+        @Query("pPhoneNumber")      pPhoneNumber: String,
+        @Query("pDateFrom")          pDateFrom: String,
+        @Query("pDateTo")            pDateTo: String,
+        @Query("pSearchText")        pSearchText: String,
+        @Query("pPageNumber")         pPageNumber: Int,
+        @Query("pPageSize")          pPageSize: Int = 10,
+    ):  Response<BaseResponse<ArrayList<PatientsListModelItem>>>
+
 
 
 
     @Headers("Accept: application/json")
-    @GET("api/Branch/CheckClinicSetting")
-    suspend fun checkClinicSetting(
-        @Query("pEntityBranchID")           pEntityBranchID: String,
+    @POST("api/Profiles/InsertClinicPatient")
+    suspend fun addNewPatient(
+        @Body props: JsonObject
+    ): Response<BaseResponse<BaseResponse.EmptyData>>
 
-        ): Response<BaseResponse<ArrayList<CheckClinicSettingModelItem>>>
+
+
+
+    @Headers("Accept: application/json")
+    @GET("api/profiles/GetCollectionData")
+    suspend fun getInsuranceCompanies(
+        @Query("pOption") pOption: String = "30"
+    ): Response<BaseResponse<InsuranceCompanyData>>
+
+
+
+    @Headers("Accept: application/json")
+    @GET("api/Authentication/GetCurrentProfile")
+    suspend fun getProfile(
+        @Query("pEntityBranchID") pEntityBranchID: String
+    ): Response<BaseResponse<ProfileData>>
+
+
+
+
+    @Multipart
+    @POST("api/Profiles/UpdateProfile")
+    suspend fun updateUserInfo(
+        @Part file: MultipartBody.Part?,
+        @PartMap send: MutableMap<String, RequestBody>
+    ): retrofit2.Response<BaseResponse<BaseResponse.EmptyData>>
+
+
+
+
+
+    @Headers("Accept: application/json")
+    @GET("api/ClinicFinancials/GetClinicEarnings")
+    suspend fun getClinicIncomeList(
+        @Query("pEntityBranchID")    pEntityBranchID: String,
+        @Query("pIncomeTypeID")      pIncomeTypeID: String,
+        @Query("pDateFrom")          pDateFrom: String,
+        @Query("pDateTo")            pDateTo: String,
+        @Query("pSearchText")        pSearchText: String,
+        @Query("pPageNumber")         pPageNumber: Int,
+        @Query("pPageSize")          pPageSize: Int = 10,
+    ):  Response<BaseResponse<ArrayList<ClinicIncomeDataItem>>>
+
+
+
+    @Headers("Accept: application/json")
+    @GET("api/ClinicFinancials/GetClinicExpenses")
+    suspend fun getClinicExpenseList(
+        @Query("pEntityBranchID")    pEntityBranchID: String,
+        @Query("pExpenseTypeID")      pExpenseTypeID: String,
+        @Query("pDateFrom")          pDateFrom: String,
+        @Query("pDateTo")            pDateTo: String,
+        @Query("pSearchText")        pSearchText: String,
+        @Query("pPageNumber")         pPageNumber: Int,
+        @Query("pPageSize")          pPageSize: Int = 10,
+    ):  Response<BaseResponse<ArrayList<ClinicExpenseDataItem>>>
+
+
+
+    @Headers("Accept: application/json")
+    @GET("api/profiles/GetCollectionData")
+    suspend fun getClinicFinanceIncomeTypes(
+        @Query("pOption") pOption: String = "59"
+    ): Response<BaseResponse<ClinicFinanceIncomeTypesData>>
+
+
+
+
+    @Headers("Accept: application/json")
+    @GET("api/profiles/GetCollectionData")
+    suspend fun getClinicFinanceExpenseTypes(
+        @Query("pOption") pOption: String = "8"
+    ): Response<BaseResponse<ClinicFinanceExpenseTypesData>>
+
+
+
+
+    @Headers("Accept: application/json")
+    @POST("api/ClinicFinancials/InsertClinicExpenses")
+    suspend fun addNewExpense(
+        @Body props: JsonObject
+    ): Response<BaseResponse<BaseResponse.EmptyData>>
+
+
+
 
 
 }

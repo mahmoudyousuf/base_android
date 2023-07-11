@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <rubikans.rubik.doctor.custom_views.CustomTopBar
+            android:id="@+id/customBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/makeAppointmentTxt"
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:textColor="@color/txt_black_color"
+            android:text="@string/add_expenses"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customBar" />
+
+
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/makeAppointmentTxt"
+           >
+
+
+
+           <rubikans.rubik.doctor.custom_views.RubikDropdownMenu
+               android:id="@+id/expenseTypeDropDown"
+               android:layout_width="match_parent"
+               android:layout_marginTop="16dp"
+               android:layout_height="wrap_content"
+               app:hint_ed="@string/expense_type"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               >
+           </rubikans.rubik.doctor.custom_views.RubikDropdownMenu>
+
+
+
+           <rubikans.rubik.doctor.custom_views.RubikEditText
+               android:id="@+id/dateEdt"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:focusable="false"
+               app:hint_ed="@string/date"
+               android:textSize="12sp"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/expenseTypeDropDown"
+
+               >
+
+
+
+           </rubikans.rubik.doctor.custom_views.RubikEditText>
+
+
+
+           <rubikans.rubik.doctor.custom_views.RubikEditText
+               android:id="@+id/timeEdt"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:focusable="false"
+               app:hint_ed="@string/time"
+               android:textSize="12sp"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/dateEdt"
+
+               >
+
+
+
+           </rubikans.rubik.doctor.custom_views.RubikEditText>
+
+
+           <rubikans.rubik.doctor.custom_views.RubikEditText
+               android:id="@+id/amountEdt"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:hint_ed="@string/amount"
+               app:layout_constraintStart_toStartOf="parent"
+               app:txtInputType="phone"
+               app:layout_constraintTop_toBottomOf="@+id/timeEdt"
+
+               >
+
+           </rubikans.rubik.doctor.custom_views.RubikEditText>
+
+
+
+
+
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/noteLayout"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               app:boxCornerRadiusBottomEnd="30dp"
+               app:boxCornerRadiusTopEnd="30dp"
+               app:boxCornerRadiusBottomStart="30dp"
+               app:boxCornerRadiusTopStart="30dp"
+               android:layout_marginStart="5dp"
+               android:layout_marginEnd="5dp"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               app:errorIconDrawable="@null"
+               android:hint="@string/note"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/amountEdt"
+               >
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/noteEdt"
+                   android:layout_width="match_parent"
+                   app:errorIconDrawable="@null"
+                   android:height="94dp"
+                   android:layout_height="wrap_content" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+           <androidx.appcompat.widget.AppCompatButton
+               style="@style/ButtonRedOutlineColored"
+               android:id="@+id/confirmBtn"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:text="@string/save"
+               android:layout_marginTop="20dp"
+               android:layout_marginBottom="50dp"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/noteLayout"
+               app:layout_constraintBottom_toBottomOf="parent"
+               />
+
+
+
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

@@ -79,10 +79,9 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/poppins_regular"
 
-                        android:queryHint="Search..."
                         app:iconifiedByDefault="false"
                         app:queryBackground="@android:color/transparent"
-                        app:queryHint="Search Here">
+                        app:queryHint="@string/search_">
 
                     </androidx.appcompat.widget.SearchView>
 

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+
+
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="25dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/rBorderGrayColor"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <TextView
+                android:id="@+id/tvNameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:maxWidth="270dp"
+                android:textColor="@color/rBlackColor"
+                android:textSize="16sp"
+                app:drawableStartCompat="@drawable/patient_small"
+                app:layout_constraintEnd_toStartOf="@+id/tvIdTxt"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Mahmoud youssef" />
+
+            <TextView
+                android:id="@+id/tvIdTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                tools:text="#123456"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/rTextBlackColor"
+                android:textSize="14sp"
+                android:drawablePadding="5dp"
+                app:layout_constraintStart_toEndOf="@id/tvNameTxt"
+                app:layout_constraintTop_toTopOf="@id/tvNameTxt"
+                app:layout_constraintBottom_toBottomOf="@id/tvNameTxt"
+                />
+
+
+
+
+
+            <TextView
+                android:id="@+id/incomeTypeTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/income_type_"
+                android:textColor="@color/rTxtDarkColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNameTxt"
+                android:drawablePadding="5dp"
+                app:drawableStartCompat="@drawable/icon_call" />
+
+            <TextView
+                android:id="@+id/tvIncomeTypeTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_regular"
+                tools:text="Consultation Fess"
+                android:textColor="@color/rTxtSecondaryColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/incomeTypeTxt"
+                app:layout_constraintTop_toTopOf="@id/incomeTypeTxt"
+                app:layout_constraintBottom_toBottomOf="@id/incomeTypeTxt"
+                />
+
+
+            <TextView
+                android:id="@+id/incomeNameTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/income_name_"
+                android:textColor="@color/rTxtDarkColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvIncomeTypeTxt"
+                android:drawablePadding="5dp"
+                app:drawableStartCompat="@drawable/icon_insurance" />
+
+            <TextView
+                android:id="@+id/tvIncomeNameTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_regular"
+                tools:text="Clinic Consultation"
+                android:textColor="@color/rTxtSecondaryColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/incomeNameTxt"
+                app:layout_constraintTop_toTopOf="@id/incomeNameTxt"
+                app:layout_constraintBottom_toBottomOf="@id/incomeNameTxt"
+                />
+
+
+
+            <TextView
+                android:id="@+id/feesTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/amount_"
+                android:textColor="@color/rTxtDarkColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvIncomeNameTxt"
+                android:drawablePadding="5dp"
+                app:drawableStartCompat="@drawable/ic_date" />
+
+            <TextView
+                android:id="@+id/tvFeesTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_regular"
+                tools:text="200 EGP"
+                android:textColor="@color/rTxtSecondaryColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/feesTxt"
+                app:layout_constraintTop_toTopOf="@id/feesTxt"
+                app:layout_constraintBottom_toBottomOf="@id/feesTxt"
+                />
+
+
+
+
+
+            <TextView
+                android:id="@+id/dateAndTimeTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/date_time"
+                android:textColor="@color/rTxtDarkColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvFeesTxt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:drawablePadding="5dp"
+                app:drawableStartCompat="@drawable/ic_date" />
+
+            <TextView
+                android:id="@+id/tvDateAndTimeTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_regular"
+                tools:text="20 June - 05 : 00 am"
+                android:textColor="@color/rTxtSecondaryColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/dateAndTimeTxt"
+                app:layout_constraintTop_toTopOf="@id/dateAndTimeTxt"
+                app:layout_constraintBottom_toBottomOf="@id/dateAndTimeTxt"
+                />
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>

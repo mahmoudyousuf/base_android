@@ -46,6 +46,10 @@ class CustomTopBar @JvmOverloads constructor(
         addCardView.visible()
     }
 
+    fun hideAddIcon() {
+        addCardView.hide()
+    }
+
     fun visableNotificationCount() {
         notificationCountTv.visible()
     }

@@ -42,6 +42,27 @@
         android:label="PatientFragment"
         tools:layout="@layout/fragment_patients">
 
+        <action
+            android:id="@+id/openAddNewPatientFragment"
+            app:destination="@id/addNewPatientFragment">
+
+
+        </action>
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/FinanceFragment"
+        android:name="rubikans.rubik.doctor.ui.main.clinicFinance.ClinicFinanceFragment"
+        android:label="FinanceFragment"
+        tools:layout="@layout/fragment_clinic_finance">
+        <action
+            android:id="@+id/openAddNewExpenseFragment"
+            app:destination="@id/addNewExpenseFragment">
+
+
+        </action>
 
 
     </fragment>
@@ -70,8 +91,28 @@
 
 
 
+        <action
+            android:id="@+id/openBasicInfoFragment"
+            app:destination="@id/BasicInfoFragment">
+            <argument
+                android:name="profileData"
+                app:argType="string" />
 
 
+        </action>
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/editBasicInfoFragment"
+        android:name="rubikans.rubik.doctor.ui.main.basicInfo.editBasicInfo.EditBasicInfoFragment"
+        android:label="EditBasicInfoFragment"
+        tools:layout="@layout/fragment_edit_basic_information">
+        <argument
+            android:name="profileData"
+            app:argType="string" />
     </fragment>
 
 
@@ -104,6 +145,51 @@
 
     </fragment>
 
+
+
+    <fragment
+        android:id="@+id/addNewPatientFragment"
+        android:name="rubikans.rubik.doctor.ui.main.addNewPatient.AddNewPatientFragment"
+        android:label="addNewPatientFragment"
+        tools:layout="@layout/fragment_add_new_patient">
+
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/BasicInfoFragment"
+        android:name="rubikans.rubik.doctor.ui.main.basicInfo.BasicInfoFragment"
+        android:label="BasicInfoFragment"
+        tools:layout="@layout/fragment_basic_information"
+
+        >
+
+        <argument
+            android:name="profileData"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/openEditBasicInfoFragment"
+            app:destination="@id/editBasicInfoFragment">
+
+            <argument
+                android:name="profileData"
+                app:argType="string" />
+        </action>
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/addNewExpenseFragment"
+        android:name="rubikans.rubik.doctor.ui.main.clinicFinance.addNewExpense.AddNewExpenseFragment"
+        android:label="addNewExpenseFragment"
+        tools:layout="@layout/fragment_add_new_expense">
+
+    </fragment>
 
 
 </navigation>

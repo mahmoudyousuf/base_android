@@ -138,7 +138,7 @@
     <string name="to">الى</string>
     <string name="yes">نعم</string>
     <string name="are_you_sure_change_status">هل ان متأكد انك تود تغير حالة الموعد ؟</string>
-    <string name="phone_number_">رقم التليفون :</string>
+    <string name="phone_number_">رقم الهاتف :</string>
     <string name="reset">اعادة تعيين</string>
     <string name="search_">بحث…</string>
 
@@ -168,10 +168,45 @@
     <string name="no_available_appointments_at_this_day">لا يوجد مواعيد متاحة في هذا اليوم</string>
     <string name="select_consultation_service_first">اختر نوع الخدمه اولا</string>
     <string name="you_should_complete_clinic_setting_first">قبل إضافة حجوزات، من فضلك اكمل اعدادات العيادة من خلال نسخة البرنامج الموجهه للكمبيوتر</string>
-    <string name="insurance_">تامين :</string>
-    <string name="first_appointment_">اول حجز :</string>
-    <string name="last_appointment_">آخر حجز</string>
+    <string name="insurance_">التأمين :</string>
+    <string name="first_appointment_">اول موعد : </string>
+    <string name="last_appointment_">اخر موعد : </string>
     <string name="ok">حسنا</string>
+
+    <string name="add_new_patient">أضف مريض جديد</string>
+    <string name="full_name">الاسم الكامل</string>
+    <string name="mobile_number_">رقم الهاتف المحمول</string>
+    <string name="insurance">تأمين</string>
+    <string name="patient_name_is_required">اسم المريض مطلوب</string>
+    <string name="gender_is_required">الجنس مطلوب</string>
+    <string name="insurance_company">شركة تأمين</string>
+    <string name="basic_information">معلومات اساسية</string>
+
+
+
+    <string name="user_photo">الصورة</string>
+    <string name="name">الاسم : </string>
+    <string name="email_">البريد الالكتروني : </string>
+    <string name="mobile_">الموبايل : </string>
+    <string name="birthdate">تاريخ الميلاد : </string>
+    <string name="gender_">الجنس : </string>
+    <string name="change_your_photo"><u>غير صورتك الشخصية</u></string>
+    <string name="no_booking_found_in_this_date">لا يوجد حجزات متاحه في هذا الميعاد</string>
+    <string name="income_type_">نوع الدخل : </string>
+    <string name="income_name_">اسم الدخل : </string>
+    <string name="clinic_income">دخل العيادة</string>
+    <string name="clinic_expenses">مصاريف العيادة</string>
+    <string name="expenses_type_">نوع المصاريف : </string>
+    <string name="income_type">نوع الدخل</string>
+    <string name="expense_type">نوع المصاريف</string>
+    <string name="add_expenses">أضافه مصاريف</string>
+    <string name="date">التاريخ</string>
+    <string name="time">الوقت</string>
+    <string name="note">ملاحظات</string>
+    <string name="expense_type_is_required">نوع المصاريف مطلوب</string>
+    <string name="date_is_required">التاريخ مطلوب</string>
+    <string name="time_is_required">الوقت مطلوب</string>
+    <string name="fees_is_required">القيمة مطلوبه</string>
 
 
 

@@ -9,6 +9,7 @@ import rubikans.rubik.doctor.data.retrofit.ApiServices
 import rubikans.rubik.doctor.data.shared.DataManager
 import rubikans.rubik.doctor.model.AppointmentsData
 import rubikans.rubik.doctor.model.CheckClinicSettingModelItem
+import rubikans.rubik.doctor.model.PatientsListModelItem
 
 import javax.inject.Inject
 
@@ -20,25 +21,20 @@ class PatientsRepository @Inject constructor(
 ) : BaseRepository(dataManager, context) {
 
 
-    suspend fun getAppointments(
-        pPageNumber: Int,
-        pBranchId: String,
-        pBookingID: String,
-        pPatientID: String,
-        pStatusID: String,
+    suspend fun getPatientList(
+        pPhoneNumber: String,
         pDateFrom: String,
         pDateTo: String,
         pSearchText: String,
-    ): Response<BaseResponse<AppointmentsData>> =
-        api.getAppointments(
-            pPageNumber = pPageNumber,
-            pBranchId = dataManager.clinic!!.entityBranchID.toString(),
-            pBookingID = pBookingID,
-            pPatientID = pPatientID,
-            pStatusID = pStatusID,
+        pPageNumber: Int,
+    ): Response<BaseResponse<ArrayList<PatientsListModelItem>>>  =
+        api.getPatientList(
+        pEntityBranchID = dataManager.clinic!!.entityBranchID.toString(),
+            pPhoneNumber = pPhoneNumber ,
             pDateFrom = pDateFrom,
             pDateTo = pDateTo,
             pSearchText = pSearchText,
+            pPageNumber = pPageNumber
         )
 
 

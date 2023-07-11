@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <rubikans.rubik.doctor.custom_views.CustomTopBar
+            android:id="@+id/customBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/makeAppointmentTxt"
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:textColor="@color/txt_black_color"
+            android:text="@string/add_new_patient"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customBar" />
+
+
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/makeAppointmentTxt"
+           >
+
+
+           <rubikans.rubik.doctor.custom_views.RubikEditText
+               android:id="@+id/patientNameEdt"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="16dp"
+               app:hint_ed="@string/full_name"
+               app:txtInputType="textEmailAddress"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               >
+
+           </rubikans.rubik.doctor.custom_views.RubikEditText>
+
+
+
+           <rubikans.rubik.doctor.custom_views.RubikEditText
+               android:id="@+id/patientMobileEdt"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:hint_ed="@string/mobile_number_"
+               app:layout_constraintStart_toStartOf="parent"
+               app:txtInputType="phone"
+
+               app:layout_constraintTop_toBottomOf="@+id/patientNameEdt"
+
+               >
+
+           </rubikans.rubik.doctor.custom_views.RubikEditText>
+
+
+
+           <rubikans.rubik.doctor.custom_views.RubikEditText
+               android:id="@+id/emailEdt"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:hint_ed="@string/email"
+               app:txtInputType="textEmailAddress"
+
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/patientMobileEdt"
+
+               >
+
+           </rubikans.rubik.doctor.custom_views.RubikEditText>
+
+
+
+           <rubikans.rubik.doctor.custom_views.RubikDropdownMenu
+               android:id="@+id/genderDropDown"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:hint_ed="@string/gender"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/emailEdt"
+               >
+           </rubikans.rubik.doctor.custom_views.RubikDropdownMenu>
+
+
+
+
+
+
+           <rubikans.rubik.doctor.custom_views.RubikEditText
+               android:id="@+id/birthDateEdt"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:focusable="false"
+               app:hint_ed="@string/birth_date_ed"
+               android:textSize="12sp"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/genderDropDown"
+
+               >
+
+
+
+           </rubikans.rubik.doctor.custom_views.RubikEditText>
+
+
+
+           <rubikans.rubik.doctor.custom_views.RubikDropdownMenu
+               android:id="@+id/insuranceCompanyDropDown"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:hint_ed="@string/insurance"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/birthDateEdt"
+               >
+           </rubikans.rubik.doctor.custom_views.RubikDropdownMenu>
+
+
+
+
+
+           <androidx.appcompat.widget.AppCompatButton
+               style="@style/ButtonRedOutlineColored"
+               android:id="@+id/confirmBtn"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:text="@string/save"
+               android:layout_marginTop="20dp"
+               android:layout_marginBottom="50dp"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/insuranceCompanyDropDown"
+               app:layout_constraintBottom_toBottomOf="parent"
+               />
+
+
+
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

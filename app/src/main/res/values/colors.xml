@@ -103,7 +103,6 @@
 
     <color name="border_grey_color">#D5D5D5</color>
     <color name="txt_secondry_color">#8A001233</color>
-    <color name="txt_dark_color">#262626</color>
     <color name="txt_red_color">#E80027</color>
     <color name="txt_red_secound_color">#BC000D</color>
     <color name="txt_red_color_accient">#D66060</color>
@@ -164,6 +163,10 @@
     <color name="rnoShowColor">#8B9198</color>
     <color name="rTextBlackColor">#171717</color>
     <color name="rGrayOnlineColor">#B0B8CF</color>
+    <color name="rRadioButtonUnSelectedColor">#F4F7FC</color>
+
+
+    <color name="txt_dark_color">#262626</color>
 
 
 

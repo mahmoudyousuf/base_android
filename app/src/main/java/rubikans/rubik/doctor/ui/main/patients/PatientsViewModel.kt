@@ -10,10 +10,9 @@ import kotlinx.coroutines.flow.Flow
 import androidx.paging.cachedIn
 import com.etamn.util.SingleLiveEvent
 import com.etamn.util.Status
-import com.google.gson.JsonObject
 import rubikans.rubik.doctor.base.BaseViewModel
 import rubikans.rubik.doctor.data.shared.DataManager
-import rubikans.rubik.doctor.model.AppointmentItem
+import rubikans.rubik.doctor.model.PatientsListModelItem
 
 import javax.inject.Inject
 
@@ -25,16 +24,16 @@ class PatientsViewModel @Inject constructor(
 ) : BaseViewModel(repository) {
 
 
-    val pBranchId = SingleLiveEvent<String>()
-    val pBookingID = SingleLiveEvent<String>()
-    val pPatientID = SingleLiveEvent<String>()
-    val pStatusID = SingleLiveEvent<String>()
+    val pPhoneNumber = SingleLiveEvent<String>()
     val pDateFrom = SingleLiveEvent<String>()
     val pDateTo = SingleLiveEvent<String>()
     val pSearchText = SingleLiveEvent<String>()
+    val pInsuranceCompanyId = SingleLiveEvent<String>()
+    val pInsuranceCompanyName = SingleLiveEvent<String>()
 
-    var appointmentsList = getAppointments()
-    fun getAppointments(): Flow<PagingData<AppointmentItem>> {
+
+    var patientsList = getPatientList()
+    fun getPatientList(): Flow<PagingData<PatientsListModelItem>> {
         return Pager(config = PagingConfig(pageSize = 10, enablePlaceholders = false),
             pagingSourceFactory = { PatientsDataSource(this, repository) }).flow.cachedIn(
             viewModelScope

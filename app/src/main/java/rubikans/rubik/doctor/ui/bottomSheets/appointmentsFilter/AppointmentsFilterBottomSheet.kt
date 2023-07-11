@@ -220,13 +220,13 @@ class AppointmentsFilterBottomSheet(
 
 
     private fun updateFromDate() {
-        val myFormat = "YYYY/MM/dd"
+        val myFormat = "YYYY-MM-dd"
         val dateFormat = SimpleDateFormat(myFormat, Locale.US)
         binding.fromDate.setText(dateFormat.format(myFromCalendar.time))
     }
 
     private fun updateToDate() {
-        val myFormat = "YYYY/MM/dd"
+        val myFormat = "YYYY-MM-dd"
         val dateFormat = SimpleDateFormat(myFormat, Locale.US)
         binding.toDate.setText(dateFormat.format(myToCalendar.time))
     }

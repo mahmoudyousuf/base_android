@@ -209,7 +209,7 @@ class MakeAppointmentFragment : BaseFragment<FragmentAddAppointmentBinding>() {
     }
 
     private fun updateAppointmentDate() {
-        val myDate = "dd/MM/YYYY"
+        val myDate = "YYYY-MM-dd"
         val dateFormat = SimpleDateFormat(myDate, Locale.US)
         binding.appointDateEdt.setText(dateFormat.format(myCalendar.time))
         appointmentsTimesModelItem = AppointmentsTimesModelItem()
@@ -252,14 +252,20 @@ class MakeAppointmentFragment : BaseFragment<FragmentAddAppointmentBinding>() {
                         timeAdapter.changeSelectedItem(-1)
 
                     } else {
-                        appointmentsTimesModelItem = response.data!![0]
+                        if(response.data!!.isNotEmpty()){
 
-                        binding.tvNumberOfCaseTxt.text =
-                            appointmentsTimesModelItem.timeSlotValue.toString()
-                        binding.tvNumberOfReservationTxt.text =
-                            appointmentsTimesModelItem.bookingCount.toString()
-                        binding.tvAvailableRemainingCasesTxt.text =
-                            (appointmentsTimesModelItem.timeSlotValue!! - appointmentsTimesModelItem.bookingCount!!).toString()
+                            appointmentsTimesModelItem = response.data!![0]
+
+                            binding.tvNumberOfCaseTxt.text =
+                                appointmentsTimesModelItem.timeSlotValue.toString()
+                            binding.tvNumberOfReservationTxt.text =
+                                appointmentsTimesModelItem.bookingCount.toString()
+                            binding.tvAvailableRemainingCasesTxt.text =
+                                (appointmentsTimesModelItem.timeSlotValue!! - appointmentsTimesModelItem.bookingCount!!).toString()
+                        }else{
+                            baseActivity.showWarningSnackbar(getString(R.string.no_booking_found_in_this_date))
+                        }
+
 
                     }
 

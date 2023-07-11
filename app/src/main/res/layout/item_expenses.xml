@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+
+
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="25dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/rBorderGrayColor"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+
+
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/expenseTypeTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/expenses_type_"
+                android:textColor="@color/rTxtDarkColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:drawablePadding="5dp"
+                app:drawableStartCompat="@drawable/icon_insurance" />
+
+            <TextView
+                android:id="@+id/tvExpenseTypeTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_regular"
+                tools:text="Clinic Consultation"
+                android:textColor="@color/rTxtSecondaryColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/expenseTypeTxt"
+                app:layout_constraintTop_toTopOf="@id/expenseTypeTxt"
+                app:layout_constraintBottom_toBottomOf="@id/expenseTypeTxt"
+                />
+
+
+
+            <TextView
+                android:id="@+id/feesTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/amount_"
+                android:textColor="@color/rTxtDarkColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvExpenseTypeTxt"
+                android:drawablePadding="5dp"
+                app:drawableStartCompat="@drawable/ic_date" />
+
+            <TextView
+                android:id="@+id/tvFeesTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_regular"
+                tools:text="200 EGP"
+                android:textColor="@color/rTxtSecondaryColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/feesTxt"
+                app:layout_constraintTop_toTopOf="@id/feesTxt"
+                app:layout_constraintBottom_toBottomOf="@id/feesTxt"
+                />
+
+
+
+
+
+            <TextView
+                android:id="@+id/dateAndTimeTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/date_time"
+                android:textColor="@color/rTxtDarkColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvFeesTxt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:drawablePadding="5dp"
+                app:drawableStartCompat="@drawable/ic_date" />
+
+            <TextView
+                android:id="@+id/tvDateAndTimeTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_regular"
+                tools:text="20 June - 05 : 00 am"
+                android:textColor="@color/rTxtSecondaryColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/dateAndTimeTxt"
+                app:layout_constraintTop_toTopOf="@id/dateAndTimeTxt"
+                app:layout_constraintBottom_toBottomOf="@id/dateAndTimeTxt"
+                />
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>

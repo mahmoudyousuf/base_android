@@ -142,7 +142,7 @@
     <string name="make_appointments">Make Appointments</string>
     <string name="service_type">Services Type</string>
     <string name="patient_name">Patient Name</string>
-    <string name="amount">Amount</string>
+    <string name="amount">Fees</string>
     <string name="payment_method">Payment Method</string>
     <string name="date_of_appointment">Date Of Appointment</string>
     <string name="time_off_appointment">Time off appointment</string>
@@ -161,10 +161,47 @@
     <string name="no_available_appointments_at_this_day">No available appointments at this day</string>
     <string name="select_consultation_service_first">Select consultation service first</string>
     <string name="you_should_complete_clinic_setting_first">Before adding an appointment, please complete the clinic setup on web through your computer</string>
-    <string name="insurance_">Insurance:</string>
+    <string name="insurance_">Insurance :</string>
     <string name="first_appointment_">First Appointment :</string>
     <string name="last_appointment_">Last Appointment :</string>
     <string name="ok">Ok</string>
+    <string name="add_new_patient">Add New Patient</string>
+    <string name="full_name">Full Name</string>
+    <string name="mobile_number_">Mobile Number</string>
+    <string name="insurance">Insurance</string>
+    <string name="patient_name_is_required">Patient name is required</string>
+    <string name="gender_is_required">gender is required</string>
+    <string name="insurance_company">Insurance Company</string>
+    <string name="basic_information">Basic Information</string>
+
+
+
+
+
+
+    <string name="user_photo">User Photo</string>
+    <string name="name">Name :</string>
+    <string name="email_">Email :</string>
+    <string name="mobile_">Mobile :</string>
+    <string name="birthdate">Birthdate :</string>
+    <string name="gender_">Gender :</string>
+    <string name="change_your_photo"><u>Change your photo</u></string>
+    <string name="no_booking_found_in_this_date">No booking found in this date</string>
+    <string name="income_type_">Income Type :</string>
+    <string name="income_name_">Income Name :</string>
+    <string name="clinic_income">Clinic Income</string>
+    <string name="clinic_expenses">Clinic Expenses</string>
+    <string name="expenses_type_">Expenses Type :</string>
+    <string name="income_type">Income type</string>
+    <string name="expense_type">Expense type</string>
+    <string name="add_expenses">Add Expenses</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="note">Note</string>
+    <string name="expense_type_is_required">Expense type is required</string>
+    <string name="date_is_required">Date is required</string>
+    <string name="time_is_required">Time is required</string>
+    <string name="fees_is_required">Fees is required</string>
 
 
 </resources>

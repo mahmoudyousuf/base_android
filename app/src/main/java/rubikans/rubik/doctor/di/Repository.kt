@@ -13,14 +13,22 @@ import rubikans.rubik.doctor.ui.auth.forgetPassword.ForgetPasswordRepository
 import rubikans.rubik.doctor.ui.auth.forgetPasswordConfirmNewPassword.ConfirmForgetPasswordRepository
 import rubikans.rubik.doctor.ui.auth.forgetPasswordOtpCheck.ForgetPasswordOtpCheckRepository
 import rubikans.rubik.doctor.ui.auth.signIn.SignInRepository
+import rubikans.rubik.doctor.ui.bottomSheets.ClinicFinanceFilter.ClinicFinanceFilterRepository
 import rubikans.rubik.doctor.ui.bottomSheets.changeLangauge.LangRepository
+import rubikans.rubik.doctor.ui.bottomSheets.patientsFilter.PatientsFilterRepository
 import rubikans.rubik.doctor.ui.bottomSheets.signOut.SignOutRepository
+import rubikans.rubik.doctor.ui.main.addNewPatient.AddNewPatientRepository
+import rubikans.rubik.doctor.ui.main.basicInfo.editBasicInfo.EditBasicInfoFragment
+import rubikans.rubik.doctor.ui.main.basicInfo.editBasicInfo.EditBasicInfoRepository
 import rubikans.rubik.doctor.ui.main.clinicBraches.ClinicBranchesRepository
 import rubikans.rubik.doctor.ui.main.changePassword.ChangePasswordRepository
+import rubikans.rubik.doctor.ui.main.clinicFinance.ClinicFinanceRepository
+import rubikans.rubik.doctor.ui.main.clinicFinance.addNewExpense.AddNewExpenseRepository
 import rubikans.rubik.doctor.ui.main.home.HomeRepository
 import rubikans.rubik.doctor.ui.main.home.appointmentDetails.AppointmentDetailsRepository
 import rubikans.rubik.doctor.ui.main.makeAppointment.MakeAppointmentRepository
 import rubikans.rubik.doctor.ui.main.patients.PatientsRepository
+import rubikans.rubik.doctor.ui.main.profile.ProfileRepository
 import javax.inject.Singleton
 
 
@@ -154,6 +162,89 @@ object Repository {
         api: ApiServices,
     ): PatientsRepository =
         PatientsRepository(appContext, dataManager,api)
+
+
+
+
+
+    @Singleton
+    @Provides
+    fun addNewPatientRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): AddNewPatientRepository =
+        AddNewPatientRepository(appContext, dataManager,api)
+
+
+
+
+    @Singleton
+    @Provides
+    fun patientsFilterRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): PatientsFilterRepository =
+        PatientsFilterRepository(appContext, dataManager,api)
+
+
+
+
+
+    @Singleton
+    @Provides
+    fun profileRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): ProfileRepository =
+        ProfileRepository(appContext, dataManager,api)
+
+
+
+    @Singleton
+    @Provides
+    fun editBasicInfoRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): EditBasicInfoRepository =
+        EditBasicInfoRepository(appContext, dataManager,api)
+
+
+
+    @Singleton
+    @Provides
+    fun clinicFinanceRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): ClinicFinanceRepository =
+        ClinicFinanceRepository(appContext, dataManager,api)
+
+
+
+    @Singleton
+    @Provides
+    fun clinicFinanceFilterRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): ClinicFinanceFilterRepository =
+        ClinicFinanceFilterRepository(appContext, dataManager,api)
+
+
+
+    @Singleton
+    @Provides
+    fun addNewExpenseRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): AddNewExpenseRepository =
+        AddNewExpenseRepository(appContext, dataManager,api)
+
 
 
 }
