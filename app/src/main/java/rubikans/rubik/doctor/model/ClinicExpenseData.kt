@@ -36,7 +36,7 @@ data class ClinicExpenseDataItem(
 	val count: Int? = null,
 
 	@field:SerializedName("ExpenseTypeID")
-	val expenseTypeID: Any? = null,
+	val expenseTypeID: Int? = null,
 
 	@field:SerializedName("Fees")
 	val fees: Any? = null,

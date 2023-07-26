@@ -49,6 +49,7 @@ class PatientsFragment : BaseFragment<FragmentPatientsBinding>(),
 
         binding.customBar.leftImage = R.drawable.ic_home_menu
         binding.customBar.hideRightIcon()
+        binding.customBar.hideLeftIcon()
         binding.customBar.visibleAddIcon()
         binding.customBar.addCardView.setOnClickListener {
             navController.navigate(PatientsFragmentDirections.openAddNewPatientFragment())

@@ -63,7 +63,7 @@ data class AppointmentItem(
 	val bookingReason: String? = null,
 
 	@field:SerializedName("ServiceType")
-	val serviceType: Any? = null,
+	val serviceType: String? = null,
 
 	@field:SerializedName("PayMentMethodName")
 	val payMentMethodName: String? = null,

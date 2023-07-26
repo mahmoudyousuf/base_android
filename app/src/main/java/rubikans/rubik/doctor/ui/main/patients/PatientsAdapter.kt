@@ -66,6 +66,9 @@ class PatientsAdapter(
 
             if(model.gender != null){
 
+
+                binding.tvGenderTxt.visible()
+
                 when (model.gender.toString()) {
 
                     // male

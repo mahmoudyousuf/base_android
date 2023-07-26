@@ -20,6 +20,7 @@ class PatientsDataSource(
                 pDateFrom = viewModel.pDateFrom.value ?: "",
                 pDateTo = viewModel.pDateTo.value ?: "",
                 pSearchText = viewModel.pSearchText.value ?: "",
+                pInsuranceCompanyID = viewModel.pInsuranceCompanyId.value ?: "",
 
                 )
 

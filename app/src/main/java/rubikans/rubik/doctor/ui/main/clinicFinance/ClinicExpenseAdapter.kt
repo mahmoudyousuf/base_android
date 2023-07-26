@@ -17,6 +17,8 @@ import rubikans.rubik.doctor.util.CommonUtilities
 
 class ClinicExpenseAdapter(
     private val context: Context,
+    private val onDelete: (model: ClinicExpenseDataItem) -> Unit,
+    private val onEdit: (model: ClinicExpenseDataItem) -> Unit,
     private val onItemClicked: (model: ClinicExpenseDataItem) -> Unit,
 
 
@@ -53,10 +55,19 @@ class ClinicExpenseAdapter(
             binding.tvExpenseTypeTxt.text = model.expenseTypeName
             binding.tvFeesTxt.text = "${model.fees} ${context.getString(R.string.egp)}"
             binding.tvDateAndTimeTxt.text = CommonUtilities.convertFullDateToFormattedDateTxt(model.createDate)
+            binding.tvNoteTxt.text = model.notes
 
 
             itemView.setOnClickListener{
                 onItemClicked(model)
+            }
+
+            binding.iconDelete.setOnClickListener {
+                onDelete(model)
+            }
+
+            binding.iconEdit.setOnClickListener {
+                onEdit(model)
             }
 
 

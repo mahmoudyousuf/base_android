@@ -29,7 +29,7 @@
     <string name="male">ذكر</string>
     <string name="full_name_are_required">الاسم الكامل مطلوب</string>
     <string name="mobile_are_required">رقم الهاتف مطلوب</string>
-    <string name="phone_number_digits_should_be_from_10_to_11_numbers">يجب أن تتراوح أرقام أرقام الهواتف من 10 إلى 11 رقمًا</string>
+    <string name="phone_number_digits_should_be_from_10_to_11_numbers">يجب أن يكون رقم الهاتف 11 رقمًا</string>
     <string name="birth_date_are_required">تاريخ الميلاد مطلوب</string>
     <string name="gender_are_required">الجنس مطلوب</string>
     <string name="password_should_be_more_than_8_char">يجب أن تكون كلمة المرور أكثر من 8 أحرف</string>
@@ -207,9 +207,13 @@
     <string name="date_is_required">التاريخ مطلوب</string>
     <string name="time_is_required">الوقت مطلوب</string>
     <string name="fees_is_required">القيمة مطلوبه</string>
+    <string name="offline">حجز اونلاين</string>
+    <string name="online">حجز بالعيادة</string>
+
+    <string name="delete_expense">هل أنت متأكد أنك تريد حذف هذا المصروف ؟</string>
 
 
-
+    <string name="note_">ملاحضات : </string>
 
 
 

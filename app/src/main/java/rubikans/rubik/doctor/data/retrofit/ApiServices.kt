@@ -144,6 +144,7 @@ interface ApiServices {
         @Query("pDateTo")            pDateTo: String,
         @Query("pSearchText")        pSearchText: String,
         @Query("pPageNumber")         pPageNumber: Int,
+        @Query("pInsuranceCompanyID")         pInsuranceCompanyID: String,
         @Query("pPageSize")          pPageSize: Int = 10,
     ):  Response<BaseResponse<ArrayList<PatientsListModelItem>>>
 
@@ -239,6 +240,13 @@ interface ApiServices {
         @Body props: JsonObject
     ): Response<BaseResponse<BaseResponse.EmptyData>>
 
+
+
+    @Headers("Accept: application/json")
+    @GET("api/ClinicFinancials/DeleteClinicExpense")
+    suspend fun deleteClinicExpense(
+        @Query("pID") pId: String,
+    ): Response<BaseResponse<BaseResponse.EmptyData>>
 
 
 

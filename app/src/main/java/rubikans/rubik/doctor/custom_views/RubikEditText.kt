@@ -2,6 +2,8 @@ package rubikans.rubik.doctor.custom_views
 
 import android.content.Context
 import android.text.Editable
+import android.text.InputFilter
+import android.text.InputFilter.LengthFilter
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.widget.EditText
@@ -9,7 +11,7 @@ import android.widget.FrameLayout
 import androidx.core.content.withStyledAttributes
 import com.google.android.material.textfield.TextInputLayout
 import rubikans.rubik.doctor.R
-
+import rubikans.rubik.doctor.util.MinMaxFilter
 
 
 class RubikEditText @JvmOverloads constructor(
@@ -30,6 +32,17 @@ class RubikEditText @JvmOverloads constructor(
 
     fun setOnTextChange(listener: OnTextChange) {
         mOnTextChange = listener
+    }
+
+
+    fun setMobile() {
+        val maxLength = 11
+        editText.filters = arrayOf<InputFilter>(LengthFilter(maxLength))
+    }
+
+
+    fun setMAxAndMinValue() {
+        editText.filters =  arrayOf<InputFilter>(MinMaxFilter(1, 100))
     }
 
     var txtHint: String? = null

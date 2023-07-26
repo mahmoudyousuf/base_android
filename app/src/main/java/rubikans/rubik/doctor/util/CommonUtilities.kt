@@ -203,9 +203,9 @@ object CommonUtilities {
 
     fun convertTimeAndDateToRFullDateFormat(oldTime: String?): String? {
 
-        val date = SimpleDateFormat("yyyy-MM-dd-hh:mm a", Locale.US).parse(oldTime)
+        val date = SimpleDateFormat("yyyy-MM-dd-HH:mm:ss", Locale.US).parse(oldTime)
         val milliseconds = date.time
-        val fmt = SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss", Locale.US)
+        val fmt = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US)
         return fmt.format(milliseconds)
     }
 

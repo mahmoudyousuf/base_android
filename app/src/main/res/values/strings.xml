@@ -41,7 +41,7 @@
     <string name="male">male</string>
     <string name="full_name_are_required">full name are required</string>
     <string name="mobile_are_required">mobile are required</string>
-    <string name="phone_number_digits_should_be_from_10_to_11_numbers">Phone number digits should be from 10 to 11 numbers</string>
+    <string name="phone_number_digits_should_be_from_10_to_11_numbers">Phone number digits should 11 numbers</string>
     <string name="birth_date_are_required">birth date are required</string>
     <string name="gender_are_required">gender are required</string>
     <string name="password_should_be_more_than_8_char">password should be more than 8 char</string>
@@ -202,6 +202,10 @@
     <string name="date_is_required">Date is required</string>
     <string name="time_is_required">Time is required</string>
     <string name="fees_is_required">Fees is required</string>
+    <string name="offline">Offline</string>
+    <string name="online">Online</string>
+    <string name="delete_expense">Are you sure you want to delete this expense ?</string>
+    <string name="note_">Note :</string>
 
 
 </resources>

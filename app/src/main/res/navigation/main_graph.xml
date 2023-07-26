@@ -60,6 +60,13 @@
         <action
             android:id="@+id/openAddNewExpenseFragment"
             app:destination="@id/addNewExpenseFragment">
+            <argument
+                android:name="expenseModel"
+                app:argType="string" />
+
+            <argument
+                android:name="isEdit"
+                app:argType="string" />
 
 
         </action>
@@ -188,6 +195,14 @@
         android:name="rubikans.rubik.doctor.ui.main.clinicFinance.addNewExpense.AddNewExpenseFragment"
         android:label="addNewExpenseFragment"
         tools:layout="@layout/fragment_add_new_expense">
+
+        <argument
+            android:name="expenseModel"
+            app:argType="string" />
+
+        <argument
+            android:name="isEdit"
+            app:argType="string" />
 
     </fragment>
 

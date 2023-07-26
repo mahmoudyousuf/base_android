@@ -67,6 +67,32 @@
                 />
 
 
+            <ImageView
+                android:id="@+id/iconDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="15dp"
+                app:srcCompat="@drawable/icon_delete"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvExpenseTypeTxt"
+                app:layout_constraintBottom_toBottomOf="@id/tvExpenseTypeTxt"
+                />
+
+
+            <ImageView
+                android:id="@+id/iconEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                app:srcCompat="@drawable/icon_edit"
+                app:layout_constraintEnd_toStartOf="@id/iconDelete"
+                app:layout_constraintTop_toTopOf="@id/tvExpenseTypeTxt"
+                app:layout_constraintBottom_toBottomOf="@id/tvExpenseTypeTxt"
+                />
+
+
 
             <TextView
                 android:id="@+id/feesTxt"
@@ -81,7 +107,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvExpenseTypeTxt"
                 android:drawablePadding="5dp"
-                app:drawableStartCompat="@drawable/ic_date" />
+                app:drawableStartCompat="@drawable/icon_fees" />
 
             <TextView
                 android:id="@+id/tvFeesTxt"
@@ -114,7 +140,7 @@
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvFeesTxt"
-                app:layout_constraintBottom_toBottomOf="parent"
+
                 android:drawablePadding="5dp"
                 app:drawableStartCompat="@drawable/ic_date" />
 
@@ -130,6 +156,40 @@
                 app:layout_constraintStart_toEndOf="@id/dateAndTimeTxt"
                 app:layout_constraintTop_toTopOf="@id/dateAndTimeTxt"
                 app:layout_constraintBottom_toBottomOf="@id/dateAndTimeTxt"
+                />
+
+
+
+            <TextView
+                android:id="@+id/noteTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/note_"
+                android:textColor="@color/rTxtDarkColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDateAndTimeTxt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                 />
+
+            <TextView
+                android:id="@+id/tvNoteTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_regular"
+                tools:text="note"
+                android:textColor="@color/rTxtSecondaryColor"
+                android:textSize="14sp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toEndOf="@id/noteTxt"
+                app:layout_constraintTop_toTopOf="@id/noteTxt"
+                app:layout_constraintBottom_toBottomOf="@id/noteTxt"
+                app:layout_constraintEnd_toEndOf="parent"
                 />
 
 

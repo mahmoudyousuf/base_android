@@ -20,9 +20,11 @@ import rubikans.rubik.doctor.base.BaseFragment
 import rubikans.rubik.doctor.base.BaseResponse
 import rubikans.rubik.doctor.databinding.FragmentClinicFinanceBinding
 import rubikans.rubik.doctor.ui.bottomSheets.ClinicFinanceFilter.ClinicFinanceFilterBottomSheet
+import rubikans.rubik.doctor.ui.bottomSheets.deleteExpense.DeleteExpenseBottomSheet
 
 import rubikans.rubik.doctor.util.extensions.hide
 import rubikans.rubik.doctor.util.extensions.observe
+import rubikans.rubik.doctor.util.extensions.toJsonString
 import rubikans.rubik.doctor.util.extensions.visible
 import rubikans.rubikcare.util.paging.CustomLoadStateAdapter
 import java.util.*
@@ -53,6 +55,7 @@ class ClinicFinanceFragment : BaseFragment<FragmentClinicFinanceBinding>(),
 
         binding.customBar.leftImage = R.drawable.ic_home_menu
         binding.customBar.hideRightIcon()
+        binding.customBar.hideLeftIcon()
 
         if(viewModel.isIncome.value == true){
             binding.customBar.hideAddIcon()
@@ -61,7 +64,10 @@ class ClinicFinanceFragment : BaseFragment<FragmentClinicFinanceBinding>(),
 
         }
         binding.customBar.addCardView.setOnClickListener {
-            navController.navigate(ClinicFinanceFragmentDirections.openAddNewExpenseFragment())
+            navController.navigate(ClinicFinanceFragmentDirections.openAddNewExpenseFragment(
+                "",
+                "false"
+            ))
 
 
         }
@@ -72,8 +78,22 @@ class ClinicFinanceFragment : BaseFragment<FragmentClinicFinanceBinding>(),
         binding.refresh.setOnRefreshListener {
             if (viewModel.isIncome.value!!) {
                 clinicIncomeAdapter.refresh()
+                lifecycleScope.launch {
+                    clinicIncomeAdapter.loadStateFlow
+                        .collect {
+                            binding.financeList.smoothScrollToPosition(0)
+                        }
+                }
+
             } else {
                 clinicExpenseAdapter.refresh()
+                lifecycleScope.launch {
+                    clinicExpenseAdapter.loadStateFlow
+                        .collect {
+                            binding.financeList.smoothScrollToPosition(0)
+                        }
+                }
+
             }
 
         }
@@ -123,6 +143,18 @@ class ClinicFinanceFragment : BaseFragment<FragmentClinicFinanceBinding>(),
 
 
         clinicExpenseAdapter = ClinicExpenseAdapter(baseActivity,
+            onDelete = {
+                val bottomSheet = DeleteExpenseBottomSheet( it , clinicExpenseAdapter)
+                bottomSheet.show(baseActivity.supportFragmentManager, "DeleteExpenseBottomSheet")
+            }, onEdit = {
+
+                navController.navigate(ClinicFinanceFragmentDirections.openAddNewExpenseFragment(
+                    it.toJsonString(),
+                    "true"
+                ))
+
+
+            },
             onItemClicked = {
 
 //                navController.navigate(HomeFragmentDirections.openappointmentDetailsFragment(it.bookingID.toString()))
@@ -179,8 +211,22 @@ class ClinicFinanceFragment : BaseFragment<FragmentClinicFinanceBinding>(),
         {
             if (viewModel.isIncome.value!!) {
                 clinicIncomeAdapter.refresh()
+                lifecycleScope.launch {
+                    clinicIncomeAdapter.loadStateFlow
+                        .collect {
+                            binding.financeList.smoothScrollToPosition(0)
+                        }
+                }
+
             } else {
                 clinicExpenseAdapter.refresh()
+                lifecycleScope.launch {
+                    clinicExpenseAdapter.loadStateFlow
+                        .collect {
+                            binding.financeList.smoothScrollToPosition(0)
+                        }
+                }
+
             }
         }
 
@@ -188,8 +234,22 @@ class ClinicFinanceFragment : BaseFragment<FragmentClinicFinanceBinding>(),
         {
             if (viewModel.isIncome.value!!) {
                 clinicIncomeAdapter.refresh()
+                lifecycleScope.launch {
+                    clinicIncomeAdapter.loadStateFlow
+                        .collect {
+                            binding.financeList.smoothScrollToPosition(0)
+                        }
+                }
+
             } else {
                 clinicExpenseAdapter.refresh()
+                lifecycleScope.launch {
+                    clinicExpenseAdapter.loadStateFlow
+                        .collect {
+                            binding.financeList.smoothScrollToPosition(0)
+                        }
+                }
+
             }
         }
 
@@ -197,8 +257,22 @@ class ClinicFinanceFragment : BaseFragment<FragmentClinicFinanceBinding>(),
         {
             if (viewModel.isIncome.value!!) {
                 clinicIncomeAdapter.refresh()
+                lifecycleScope.launch {
+                    clinicIncomeAdapter.loadStateFlow
+                        .collect {
+                            binding.financeList.smoothScrollToPosition(0)
+                        }
+                }
+
             } else {
                 clinicExpenseAdapter.refresh()
+                lifecycleScope.launch {
+                    clinicExpenseAdapter.loadStateFlow
+                        .collect {
+                            binding.financeList.smoothScrollToPosition(0)
+                        }
+                }
+
             }
         }
 
@@ -206,8 +280,22 @@ class ClinicFinanceFragment : BaseFragment<FragmentClinicFinanceBinding>(),
         {
             if (viewModel.isIncome.value!!) {
                 clinicIncomeAdapter.refresh()
+                lifecycleScope.launch {
+                    clinicIncomeAdapter.loadStateFlow
+                        .collect {
+                            binding.financeList.smoothScrollToPosition(0)
+                        }
+                }
+
             } else {
                 clinicExpenseAdapter.refresh()
+                lifecycleScope.launch {
+                    clinicExpenseAdapter.loadStateFlow
+                        .collect {
+                            binding.financeList.smoothScrollToPosition(0)
+                        }
+                }
+
             }
         }
 

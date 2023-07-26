@@ -155,7 +155,7 @@
                     android:fontFamily="@font/poppins_regular"
                     android:textAllCaps="true"
                     android:textStyle="bold"
-                    app:backgroundTint="@color/blue"
+                    app:backgroundTint="@color/rPrimaryColor"
                     app:cornerRadius="16dp"
                     app:iconGravity="textStart"
                     app:iconPadding="10dp"

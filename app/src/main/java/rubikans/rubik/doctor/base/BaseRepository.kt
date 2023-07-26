@@ -2,7 +2,7 @@ package rubikans.rubik.doctor.base
 
 
 import android.content.Context
-import com.etamn.util.ConnectivityUtils
+import rubikans.rubik.doctor.util.ConnectivityUtils
 import rubikans.rubik.doctor.data.shared.DataManager
 
 

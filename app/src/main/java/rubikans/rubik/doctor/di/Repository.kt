@@ -15,6 +15,7 @@ import rubikans.rubik.doctor.ui.auth.forgetPasswordOtpCheck.ForgetPasswordOtpChe
 import rubikans.rubik.doctor.ui.auth.signIn.SignInRepository
 import rubikans.rubik.doctor.ui.bottomSheets.ClinicFinanceFilter.ClinicFinanceFilterRepository
 import rubikans.rubik.doctor.ui.bottomSheets.changeLangauge.LangRepository
+import rubikans.rubik.doctor.ui.bottomSheets.deleteExpense.DeleteExpenseRepository
 import rubikans.rubik.doctor.ui.bottomSheets.patientsFilter.PatientsFilterRepository
 import rubikans.rubik.doctor.ui.bottomSheets.signOut.SignOutRepository
 import rubikans.rubik.doctor.ui.main.addNewPatient.AddNewPatientRepository
@@ -244,6 +245,19 @@ object Repository {
         api: ApiServices,
     ): AddNewExpenseRepository =
         AddNewExpenseRepository(appContext, dataManager,api)
+
+
+
+    @Singleton
+    @Provides
+    fun deleteExpenseRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): DeleteExpenseRepository =
+        DeleteExpenseRepository(appContext, dataManager,api)
+
+
 
 
 

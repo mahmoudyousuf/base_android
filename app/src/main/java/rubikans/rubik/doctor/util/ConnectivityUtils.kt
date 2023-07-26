@@ -1,4 +1,4 @@
-package com.etamn.util
+package rubikans.rubik.doctor.util
 
 import android.content.Context
 import android.net.ConnectivityManager

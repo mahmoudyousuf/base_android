@@ -7,23 +7,22 @@ import android.os.Bundle
 import android.view.View
 import android.widget.PopupMenu
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.etamn.util.Status
 import com.google.gson.JsonObject
-
 import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONObject
-
 import rubikans.rubik.doctor.R
 import rubikans.rubik.doctor.base.BaseFragment
 import rubikans.rubik.doctor.base.BaseResponse
 import rubikans.rubik.doctor.databinding.FragmentAddNewExpenseBinding
+import rubikans.rubik.doctor.model.ClinicExpenseDataItem
 import rubikans.rubik.doctor.model.ClinicFinanceExpenseTypesData
 import rubikans.rubik.doctor.ui.auth.AuthActivity
 import rubikans.rubik.doctor.util.CommonUtilities
-import rubikans.rubik.doctor.util.extensions.format
 import rubikans.rubik.doctor.util.extensions.observe
+import rubikans.rubik.doctor.util.extensions.toObjectFromJson
 import java.text.SimpleDateFormat
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.util.*
 
@@ -43,10 +42,17 @@ class AddNewExpenseFragment : BaseFragment<FragmentAddNewExpenseBinding>() {
 
 
 
+    private val args by navArgs<AddNewExpenseFragmentArgs>()
+    lateinit var clinicExpenseDataItem: ClinicExpenseDataItem
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        if(args.isEdit == "true"){
+            clinicExpenseDataItem =
+                args.expenseModel.toObjectFromJson<ClinicExpenseDataItem>(ClinicExpenseDataItem::class.java)
+        }
 
         time =
             TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
@@ -79,8 +85,21 @@ class AddNewExpenseFragment : BaseFragment<FragmentAddNewExpenseBinding>() {
 
 
 
-        binding.dateEdt.setText(CommonUtilities.convertFullDateToFormattedDatex(currentDate.toString())!!)
-        binding.timeEdt.setText(CommonUtilities.convertFullDateToFormattedDateToTime(currentDate.toString())!!)
+        if(args.isEdit == "true"){
+            binding.expenseTypeDropDown.setText(clinicExpenseDataItem.expenseTypeName!!)
+            binding.dateEdt.setText(CommonUtilities.convertFullDateToFormattedDatex(clinicExpenseDataItem.createDate)!!)
+            binding.timeEdt.setText(CommonUtilities.convertFullDateToFormattedDateToTime(clinicExpenseDataItem.createDate)!!)
+            binding.amountEdt.setText(clinicExpenseDataItem.fees.toString()!!)
+            binding.noteEdt.setText(clinicExpenseDataItem.notes)
+            expenseTypeId = clinicExpenseDataItem.expenseTypeID!!
+
+        }else{
+
+            binding.dateEdt.setText(CommonUtilities.convertFullDateToFormattedDatex(currentDate.toString())!!)
+            binding.timeEdt.setText(CommonUtilities.convertFullDateToFormattedDateToTime(currentDate.toString())!!)
+        }
+
+
 //        CommonUtilities.convertTimeAndDateToRFullDateFormat(binding.dateEdt.getText() + "-" + binding.timeEdt.getText()!!)
 //            ?.let { binding.amountEdt.setText(it) }
 
@@ -173,9 +192,19 @@ class AddNewExpenseFragment : BaseFragment<FragmentAddNewExpenseBinding>() {
 
             val props = JSONObject()
 
+            val date12Format = SimpleDateFormat("hh:mm a", Locale.ENGLISH)
+            val date24Format = SimpleDateFormat("HH:mm:ss")
+            val time = date24Format.format(date12Format.parse(binding.timeEdt.getText())!!)
+
+
+            if(args.isEdit == "true"){
+
+                props.put("ClinicExpenseID", clinicExpenseDataItem.clinicExpenseID.toString())
+
+            }
 
                 props.put("ExpenseTypeID", expenseTypeId.toString())
-                props.put("CreateDate", CommonUtilities.convertTimeAndDateToRFullDateFormat (binding.dateEdt.getText() + "-" + binding.timeEdt.getText() ))
+                props.put("CreateDate", CommonUtilities.convertTimeAndDateToRFullDateFormat (binding.dateEdt.getText() + "-" + time ))
                 props.put("EntityBranchID", baseActivity.dataManager.clinic!!.entityBranchID.toString())
                 props.put("Fees", binding.amountEdt.getText())
                 props.put("Notes", binding.noteEdt.text)
@@ -319,6 +348,11 @@ class AddNewExpenseFragment : BaseFragment<FragmentAddNewExpenseBinding>() {
     private fun updateTimeLabel() {
         val myFormat = "hh:mm a"
         val dateFormat = SimpleDateFormat(myFormat, Locale.US)
+
+//        val timeComeFromServer = "3:30 PM"
+//        val date12Format = SimpleDateFormat("hh:mm a", Locale.ENGLISH)
+//        val date24Format = SimpleDateFormat("HH:mm")
+//        baseActivity.showWarningSnackbar(date24Format.format(date12Format.parse(timeComeFromServer)!!))
 
 //        val cmp = dateFormat.format(currentDate).compareTo(dateFormat.format(myTimeCalendar.time))
 //        baseActivity.showWarningSnackbar(cmp.toString())

@@ -4,6 +4,10 @@ import android.app.DatePickerDialog
 import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.InputFilter
+import android.text.Spanned
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.PopupMenu
@@ -17,6 +21,7 @@ import org.json.JSONObject
 import rubikans.rubik.doctor.R
 import rubikans.rubik.doctor.base.BaseFragment
 import rubikans.rubik.doctor.base.BaseResponse
+import rubikans.rubik.doctor.custom_views.RubikEditText
 import rubikans.rubik.doctor.databinding.FragmentAddNewPatientBinding
 import rubikans.rubik.doctor.model.InsuranceCompanyData
 import rubikans.rubik.doctor.model.PaymentMethodsModel
@@ -57,10 +62,15 @@ class AddNewPatientFragment : BaseFragment<FragmentAddNewPatientBinding>() {
             }
     }
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding = viewDataBinding!!
+
+
+
 
         binding.customBar.leftImage = R.drawable.ic_back
         binding.customBar.leftCardView.setOnClickListener {
@@ -70,6 +80,34 @@ class AddNewPatientFragment : BaseFragment<FragmentAddNewPatientBinding>() {
 
 
 
+
+//        binding.patientMobileEdt.filters = arrayOf<InputFilter>(MinMaxFilter(1, 100))
+//
+//
+//        binding.patientMobileEdt.setOnTextChange(object : RubikEditText.OnTextChange {
+//            override fun onTextChange(text: String) {
+//
+//
+//
+//
+//
+//
+//                if (text.length > 11){
+//
+//
+//                    baseActivity.showWarningSnackbar("ss")
+//                }else{
+//
+//                }
+//
+//            }
+//
+//        })
+
+
+
+
+        binding.patientMobileEdt.setMobile()
 
         binding.birthDateEdt.setLeftIcon(R.drawable.ic_calender)
         binding.birthDateEdt.setFocusable()
@@ -328,6 +366,10 @@ class AddNewPatientFragment : BaseFragment<FragmentAddNewPatientBinding>() {
 
 
     }
+
+
+
+
 
 
     private fun updateLabel() {

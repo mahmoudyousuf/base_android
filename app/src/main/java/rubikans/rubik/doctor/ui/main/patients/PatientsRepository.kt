@@ -27,6 +27,7 @@ class PatientsRepository @Inject constructor(
         pDateTo: String,
         pSearchText: String,
         pPageNumber: Int,
+        pInsuranceCompanyID: String,
     ): Response<BaseResponse<ArrayList<PatientsListModelItem>>>  =
         api.getPatientList(
         pEntityBranchID = dataManager.clinic!!.entityBranchID.toString(),
@@ -34,7 +35,8 @@ class PatientsRepository @Inject constructor(
             pDateFrom = pDateFrom,
             pDateTo = pDateTo,
             pSearchText = pSearchText,
-            pPageNumber = pPageNumber
+            pPageNumber = pPageNumber,
+            pInsuranceCompanyID = pInsuranceCompanyID
         )
 
 

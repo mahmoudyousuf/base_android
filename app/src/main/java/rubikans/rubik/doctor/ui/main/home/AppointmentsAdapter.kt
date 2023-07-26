@@ -80,12 +80,39 @@ class AppointmentsAdapter(
                 binding.tvDateTxt.text = CommonUtilities.convertFullDateToFormattedDateTxtWithoutTime(model.bookingDate) + "-" +CommonUtilities.convertTimeToFormattedTimeTxt(model.startTime)
             }
 
-            binding.tvOnlineOrOfflineTxt.text = model.clinicOnline
+//            binding.tvOnlineOrOfflineTxt.text = model.clinicOnline
+//
+//
+//
+//            if(model.clinicOnline == "Online"){
+//                binding.tvOnlineOrOfflineTxt.setTextColor(ContextCompat.getColor(context, R.color.rDarkBlueColor))
+//            }
 
-            if(model.clinicOnline == "Online"){
-                binding.tvOnlineOrOfflineTxt.setTextColor(ContextCompat.getColor(context, R.color.rDarkBlueColor))
+
+            when (model.serviceType.toString()) {
+
+                // offline
+                "1" -> {
+                    binding.tvOnlineOrOfflineTxt.setTextColor(ContextCompat.getColor(context, R.color.rGrayOnlineColor))
+                   binding.tvOnlineOrOfflineTxt.text = context.getString(R.string.offline)
+
+
+                }
+                // online
+                "2" -> {
+
+                    binding.tvOnlineOrOfflineTxt.setTextColor(ContextCompat.getColor(context, R.color.rDarkBlueColor))
+                      binding.tvOnlineOrOfflineTxt.text = context.getString(R.string.online)
+
+
+                }
+
+
+
+                else -> {
+
+                }
             }
-
 
             when (model.bookingStatus) {
 
