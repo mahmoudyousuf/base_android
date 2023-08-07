@@ -23,7 +23,7 @@
         android:theme="@style/Theme.rubikans"
         tools:targetApi="31">
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.main.splash.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait" >
             <intent-filter>

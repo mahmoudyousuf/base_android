@@ -28,6 +28,7 @@ import rubikans.rubik.doctor.ui.main.clinicFinance.addNewExpense.AddNewExpenseRe
 import rubikans.rubik.doctor.ui.main.home.HomeRepository
 import rubikans.rubik.doctor.ui.main.home.appointmentDetails.AppointmentDetailsRepository
 import rubikans.rubik.doctor.ui.main.makeAppointment.MakeAppointmentRepository
+import rubikans.rubik.doctor.ui.main.notification.NotificationsRepository
 import rubikans.rubik.doctor.ui.main.patients.PatientsRepository
 import rubikans.rubik.doctor.ui.main.profile.ProfileRepository
 import javax.inject.Singleton
@@ -256,6 +257,17 @@ object Repository {
         api: ApiServices,
     ): DeleteExpenseRepository =
         DeleteExpenseRepository(appContext, dataManager,api)
+
+
+
+    @Singleton
+    @Provides
+    fun notificationsRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): NotificationsRepository =
+        NotificationsRepository(appContext, dataManager,api)
 
 
 

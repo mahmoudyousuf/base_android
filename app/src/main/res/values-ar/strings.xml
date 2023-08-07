@@ -217,6 +217,11 @@
 
     <string name="no_patients_founded_">لم يتم العثور علي أي مرضى !</string>
 
+    <string name="mark_all_as_read">تمييز كمقرؤه</string>
+
+
+    <string name="notifications">الاشعارات</string>
+
     <string name="check_internet_connection">Check your internet connection</string>
     <string name="some_thing_went_wrong_error_msg">Something went wrong, Please try again</string>
 

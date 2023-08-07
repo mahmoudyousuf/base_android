@@ -2,6 +2,8 @@ package rubikans.rubik.doctor.ui.main.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.activityViewModels
@@ -74,11 +76,62 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
             viewModel.checkClinicSetting(baseActivity.dataManager.clinic!!.entityBranchID.toString())
 
         }
+        binding.customBar.visibleNotificationIcon()
+        binding.customBar.notificationCardView.setOnClickListener {
+
+            navController.navigate(HomeFragmentDirections.openNotificationFragment())
+        }
 
         binding.customBar.leftCardView.setOnClickListener {
             startActivity(Intent(baseActivity, ClinicBranchesActivity::class.java))
 
         }
+
+
+
+        val handler = Handler.createAsync(Looper.getMainLooper())
+
+
+        handler.postDelayed({
+            if(baseActivity.dataManager.IsFromNotifications == "1"){
+
+                baseActivity.dataManager.saveIsFromNotifications("0")
+//                when (baseActivity.dataManager.notificationType) {
+//                    "1" -> {
+//
+//                        viewModel.readSelectedNotifications(baseActivity.dataManager.notificationIdID.toString())
+//                        baseActivity.dataManager.saveNotificationType("0")
+//                        baseActivity.dataManager.saveNotificationIdID("0")
+//
+//                        navController.navigate(MainHomeFragmentDirections.openMedicalProfileFragment("from MainHome"))
+//                    }
+//
+//
+//                    "2" -> {
+//                        viewModel.readSelectedNotifications(baseActivity.dataManager.notificationIdID.toString())
+//                        navController.navigate(
+//                            MainHomeFragmentDirections.openAppointmentsDetailsFragment(
+//                                baseActivity.dataManager.notificationDirectionId.toString()
+//                            )
+//                        )
+//                        baseActivity.dataManager.saveNotificationType("0")
+//
+//                        baseActivity.dataManager.saveNotificationIdID("0")
+//                        baseActivity.dataManager.saveNotificationDirectionId("0")
+//
+//
+//
+//                    }
+//
+//
+//                    else -> {
+//
+//
+//                    }
+//                }
+
+            }
+        }, 1000)
 
 
 
@@ -255,6 +308,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
         binding.searchView.setOnQueryTextListener(this)
 
 
+        viewModel.getNotificationCount()
 
 //        viewModel.getAppointments()
 
@@ -265,6 +319,79 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
 
 
     private fun setObserver() {
+
+
+        observe(viewModel.readSelectedNotificationsState)
+        {
+            when (it) {
+                is Status.Loading -> {
+                    baseActivity.showDialogLoading()
+                }
+                is Status.Success<*> -> {
+                    baseActivity.hideDialogLoading()
+                    val response = it.data as BaseResponse<BaseResponse.EmptyData>
+
+                }
+                is Status.Error -> {
+                    baseActivity.hideDialogLoading()
+                    baseActivity.showWarningSnackbar(it.message!!)
+
+                }
+                is Status.Unauthorized -> {
+                    baseActivity.dataManager.saveIsLogin(false)
+                    val i = Intent(baseActivity, AuthActivity::class.java)
+                    i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(i)
+                    baseActivity.finish()
+                    baseActivity.showWarningSnackbar(getString(R.string.please_login))
+                }
+            }
+        }
+
+
+        observe(viewModel.getNotificationCountState)
+        {
+            when (it) {
+                is Status.Loading -> {
+                    baseActivity.showDialogLoading()
+                }
+                is Status.Success<*> -> {
+                    baseActivity.hideDialogLoading()
+                    val response = it.data as BaseResponse<Int>
+
+                    baseActivity.dataManager.saveNotificationsCount(response.data.toString())
+
+
+                    if (response.data != 0) {
+                        binding.customBar.visableNotificationCount()
+
+                        binding.customBar.setNotificationCount("+" + response.data.toString())
+
+                    } else {
+                        binding.customBar.hideNotificationCount()
+                    }
+
+
+//                        val badgeCount = 1
+//                        ShortcutBadger.applyCount(context, badgeCount);
+
+
+                }
+                is Status.Error -> {
+                    baseActivity.hideDialogLoading()
+                    baseActivity.showWarningSnackbar(it.message!!)
+
+                }
+                is Status.Unauthorized -> {
+                    baseActivity.dataManager.saveIsLogin(false)
+                    val i = Intent(baseActivity, AuthActivity::class.java)
+                    i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(i)
+                    baseActivity.finish()
+                    baseActivity.showWarningSnackbar(getString(R.string.please_login))
+                }
+            }
+        }
 
         observe(viewModel.pBranchId)
         {

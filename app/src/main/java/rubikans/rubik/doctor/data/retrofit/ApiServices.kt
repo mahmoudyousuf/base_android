@@ -251,4 +251,33 @@ interface ApiServices {
 
 
 
+    @Headers("Accept: application/json")
+    @GET("api/Notifications/CountAllNotification")
+    suspend fun getNotificationCount(
+    ): Response<BaseResponse<Int>>
+
+
+    @Headers("Accept: application/json")
+    @GET("api/Notifications/GetAllNotifications")
+    suspend fun getNotifications(
+    ): Response<BaseResponse<ArrayList<NotificationsDataItem>>>
+
+
+    @Headers("Accept: application/json")
+    @GET("api/Notifications/MakeAllNotificationAsRead")
+    suspend fun readAllNotifications(
+    ): Response<BaseResponse<BaseResponse.EmptyData>>
+
+
+    @Headers("Accept: application/json")
+    @GET("api/Notifications/MakeNotificationAsRead")
+    suspend fun readSelectedNotifications(
+        @Query("pNotificationID") pNotificationID: String,
+    ): Response<BaseResponse<BaseResponse.EmptyData>>
+
+
+
+
+
+
 }

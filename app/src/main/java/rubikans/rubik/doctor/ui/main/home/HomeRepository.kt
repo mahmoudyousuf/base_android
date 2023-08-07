@@ -75,5 +75,14 @@ class HomeRepository @Inject constructor(
 
 
 
+    suspend fun getNotificationCount(): Response<BaseResponse<Int>> =
+        api.getNotificationCount()
+
+
+    suspend fun readSelectedNotifications(pNotificationID: String): Response<BaseResponse<BaseResponse.EmptyData>> =
+        api.readSelectedNotifications(pNotificationID)
+
+
+
 
 }

@@ -5,7 +5,6 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import rubikans.rubik.doctor.R
-import rubikans.rubik.doctor.SplashActivity
 import rubikans.rubik.doctor.base.BaseBottomSheet
 import rubikans.rubik.doctor.databinding.BottomSheetChangeLangaugeBinding
 import rubikans.rubik.doctor.util.LocaleUtils

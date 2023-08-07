@@ -1,14 +1,13 @@
 package rubikans.rubik.doctor.ui.main
 
 
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
+import android.content.*
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.annotation.Nullable
 import androidx.core.view.isVisible
@@ -21,6 +20,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.etamn.util.Status
+import com.google.firebase.messaging.FirebaseMessaging
 import dagger.hilt.android.AndroidEntryPoint
 import rubikans.rubik.doctor.R
 import rubikans.rubik.doctor.base.BaseActivity
@@ -103,6 +103,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
 
     }
+
+
 
 
 

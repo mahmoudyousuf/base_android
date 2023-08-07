@@ -13,6 +13,10 @@
 
 
         <action
+            android:id="@+id/openNotificationFragment"
+            app:destination="@id/notificationFragment" />
+
+        <action
             android:id="@+id/openappointmentDetailsFragment"
             app:destination="@id/appointmentDetailsFragment">
             <argument
@@ -203,6 +207,32 @@
         <argument
             android:name="isEdit"
             app:argType="string" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="rubikans.rubik.doctor.ui.main.notification.NotificationFragment"
+        android:label="NotificationFragment" >
+
+<!--        <action-->
+<!--            android:id="@+id/openAppointmentsDetailsFragment"-->
+<!--            app:destination="@id/AppointmentsDetailsFragment">-->
+<!--            <argument-->
+<!--                android:name="appointmentModel"-->
+<!--                app:argType="string" />-->
+
+<!--        </action>-->
+
+<!--        <action-->
+<!--            android:id="@+id/openMedicalProfileFragment"-->
+<!--            app:destination="@id/medicalProfileFragment">-->
+
+<!--            <argument-->
+<!--                android:name="comeFrom"-->
+<!--                app:argType="string" />-->
+<!--        </action>-->
 
     </fragment>
 

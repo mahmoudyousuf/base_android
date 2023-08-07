@@ -82,6 +82,23 @@ class HomeViewModel @Inject constructor(
 
 
 
+
+    val getNotificationCountState = SingleLiveEvent<Status>()
+    fun getNotificationCount(
+    ) {
+        performNetworkCall({
+            repository.getNotificationCount()
+        }, getNotificationCountState)
+    }
+
+    val readSelectedNotificationsState = SingleLiveEvent<Status>()
+    fun readSelectedNotifications(pNotificationID: String) {
+        performNetworkCall({
+            repository.readSelectedNotifications(pNotificationID)
+        }, readSelectedNotificationsState)
+    }
+
+
 }
 
 
