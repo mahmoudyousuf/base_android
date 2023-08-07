@@ -9,6 +9,7 @@ import rubikans.rubik.doctor.data.retrofit.ApiServices
 import rubikans.rubik.doctor.data.shared.DataManager
 import rubikans.rubik.doctor.model.AppointmentsData
 import rubikans.rubik.doctor.model.CheckClinicSettingModelItem
+import rubikans.rubik.doctor.model.ProfileData
 
 import javax.inject.Inject
 
@@ -62,6 +63,17 @@ class HomeRepository @Inject constructor(
         api.checkClinicSetting(
             pEntityBranchID
         )
+
+
+
+
+    suspend fun getProfile(pEntityBranchID: String):  Response<BaseResponse<ProfileData>> =
+        api.getProfile(
+            pEntityBranchID
+        )
+
+
+
 
 
 }

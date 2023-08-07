@@ -81,7 +81,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvNameTxt"
                 android:drawablePadding="5dp"
-                app:drawableStartCompat="@drawable/icon_call" />
+                app:drawableStartCompat="@drawable/icon_income" />
 
             <TextView
                 android:id="@+id/tvIncomeTypeTxt"
@@ -111,7 +111,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvIncomeTypeTxt"
                 android:drawablePadding="5dp"
-                app:drawableStartCompat="@drawable/icon_insurance" />
+                app:drawableStartCompat="@drawable/icon_income" />
 
             <TextView
                 android:id="@+id/tvIncomeNameTxt"

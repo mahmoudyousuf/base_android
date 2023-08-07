@@ -20,12 +20,12 @@ import rubikans.rubik.doctor.util.extensions.visible
 
 class AppointmentsAdapter(
     private val context: Context,
-    private val onItemClicked: (model: AppointmentItem) -> Unit,
-    private val onConfirmClicked: (model: AppointmentItem) -> Unit,
-    private val onCancelClicked: (model: AppointmentItem) -> Unit,
-    private val onNoShowClicked: (model: AppointmentItem) -> Unit,
-    private val onDoneClicked: (model: AppointmentItem) -> Unit,
-    private val onOnServiceClicked: (model: AppointmentItem) -> Unit,
+    private val onItemClicked: (model: AppointmentItem, position : Int) -> Unit,
+    private val onConfirmClicked: (model: AppointmentItem, position : Int) -> Unit,
+    private val onCancelClicked: (model: AppointmentItem, position : Int) -> Unit,
+    private val onNoShowClicked: (model: AppointmentItem, position : Int) -> Unit,
+    private val onDoneClicked: (model: AppointmentItem, position : Int) -> Unit,
+    private val onOnServiceClicked: (model: AppointmentItem , position : Int) -> Unit,
 
     ) : PagingDataAdapter<AppointmentItem, AppointmentsAdapter.ViewHolder>(AppointmentItem.CALLBACK) {
 
@@ -47,15 +47,15 @@ class AppointmentsAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val model = getItem(position)!!
-        holder.bind(model)
+        holder.bind(model , position)
 
     }
 
 
-    inner class ViewHolder(var binding: ItemAppointmentBinding) :
+    inner class ViewHolder(var binding: ItemAppointmentBinding ) :
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
-        fun bind(model: AppointmentItem) {
+        fun bind(model: AppointmentItem , position: Int) {
             binding.tvNameTxt.text = model.patientName
             binding.tvIdTxt.text = "#${model.bookingNo.toString()}"
 
@@ -217,27 +217,27 @@ class AppointmentsAdapter(
             }
 
             itemView.setOnClickListener{
-                onItemClicked(model)
+                onItemClicked(model, position)
             }
 
             binding.confirmLayout.setOnClickListener {
-                onConfirmClicked(model)
+                onConfirmClicked(model, position)
             }
 
             binding.cancelLayout.setOnClickListener {
-                onCancelClicked(model)
+                onCancelClicked(model, position)
             }
 
             binding.noShowLayout.setOnClickListener {
-                onNoShowClicked(model)
+                onNoShowClicked(model, position)
             }
 
             binding.doneLayout.setOnClickListener {
-                onDoneClicked(model)
+                onDoneClicked(model, position)
             }
 
             binding.onServiceLayout.setOnClickListener {
-                onOnServiceClicked(model)
+                onOnServiceClicked(model , position)
             }
 
 

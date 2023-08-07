@@ -194,6 +194,7 @@ class EditBasicInfoFragment : BaseFragment<FragmentEditBasicInformationBinding>(
 
             val data: MutableMap<String, RequestBody> = HashMap()
             data["ProfileName"] = binding.fullName.getText().getStringPart()!!
+            data["ProfileID"] = baseActivity.dataManager.profile!!.user!!.profileID.toString().getStringPart()!!
 
 
             if (genderId != 0) {
@@ -257,8 +258,8 @@ class EditBasicInfoFragment : BaseFragment<FragmentEditBasicInformationBinding>(
                     baseActivity.showSuccessSnackbar(response.message.toString())
                     navController.navigateUp()
                     navController.navigateUp()
-//                    LocalBroadcastManager.getInstance(baseActivity)
-//                        .sendBroadcast(Intent("UpdateProfileEvent"))
+                    LocalBroadcastManager.getInstance(baseActivity)
+                        .sendBroadcast(Intent("UpdateProfileEvent"))
 
 
                 }

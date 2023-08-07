@@ -69,6 +69,19 @@ class HomeViewModel @Inject constructor(
     }
 
 
+
+    val getProfileState = SingleLiveEvent<Status>()
+    fun getProfile(
+    ) {
+        performNetworkCall({
+            repository.getProfile(
+                pEntityBranchID = dataManager.clinic!!.entityBranchID.toString()
+            )
+        }, getProfileState)
+    }
+
+
+
 }
 
 

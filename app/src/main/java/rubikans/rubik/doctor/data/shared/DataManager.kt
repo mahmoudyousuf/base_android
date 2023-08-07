@@ -3,6 +3,7 @@ package rubikans.rubik.doctor.data.shared
 import android.content.Context
 import android.content.SharedPreferences
 import rubikans.rubik.doctor.model.ClinicBranchesDataItem
+import rubikans.rubik.doctor.model.ProfileData
 import rubikans.rubik.doctor.util.LocaleUtils
 import rubikans.rubik.doctor.util.extensions.toObjectFromJson
 
@@ -77,6 +78,28 @@ class DataManager(context: Context?) {
     ///////////////////////////////////////////////////////////////////
 
 
+    ///////////////////////////////////////////////////////////////////
+
+
+
+    fun saveProfile(x: String) {
+        mSharedPreferences!!.edit().putString(Profile, x).apply()
+    }
+
+
+    fun deleteProfile() {
+        mSharedPreferences!!.edit().remove(Profile).apply()
+    }
+
+    val profile: ProfileData?
+        get() {
+            return mSharedPreferences!!.getString(Profile, "")
+                .toObjectFromJson(ProfileData::class.java)
+        }
+
+    ////////////////////////////////////////////////////////////////////////////////
+
+
 
 //    fun saveProfile(x: String) {
 //        mSharedPreferences!!.edit().putString(Profile, x).apply()
@@ -114,6 +137,21 @@ class DataManager(context: Context?) {
         get() = mSharedPreferences!!.getString(NOFICATIONTYPE, "0")
 
     ////////////////////////////////////////////////////////////////////////////////
+
+
+    ////////////////////////////////////////////////////////////////////////////////
+
+    fun saveNotificationDirectionId(id: String?) {
+        mSharedPreferences!!.edit().putString(NOFICATIONDIRECTIONID, id).apply()
+
+    }
+
+    val notificationDirectionId: String?
+        get() = mSharedPreferences!!.getString(NOFICATIONDIRECTIONID, "0")
+
+    ////////////////////////////////////////////////////////////////////////////////
+
+
 
     fun saveNotificationId(id: String?) {
         mSharedPreferences!!.edit().putString(NOFICATIOND, id).apply()
@@ -213,6 +251,8 @@ class DataManager(context: Context?) {
         const val NOFICATIONDID = "NOFICATIOND"
         const val ISFROMNOTIFICTIONS = "ISFROMNOTIFICTIONS"
         const val NOTIFICATIONSCOUNT = "NOTIFICATIONSCOUNT"
+        const val NOFICATIONDIRECTIONID = "NOFICATIONDIRECTIONID"
+
 
 
     }

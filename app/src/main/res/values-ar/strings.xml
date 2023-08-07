@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Rubik Care</string>
+    <string name="app_name">Rubik Doctor</string>
 
 
 
@@ -207,15 +207,15 @@
     <string name="date_is_required">التاريخ مطلوب</string>
     <string name="time_is_required">الوقت مطلوب</string>
     <string name="fees_is_required">القيمة مطلوبه</string>
-    <string name="offline">حجز اونلاين</string>
-    <string name="online">حجز بالعيادة</string>
+    <string name="offline">حجز بالعيادة</string>
+    <string name="online">حجز اونلاين</string>
 
     <string name="delete_expense">هل أنت متأكد أنك تريد حذف هذا المصروف ؟</string>
 
 
     <string name="note_">ملاحضات : </string>
 
-
+    <string name="no_patients_founded_">لم يتم العثور علي أي مرضى !</string>
 
     <string name="check_internet_connection">Check your internet connection</string>
     <string name="some_thing_went_wrong_error_msg">Something went wrong, Please try again</string>

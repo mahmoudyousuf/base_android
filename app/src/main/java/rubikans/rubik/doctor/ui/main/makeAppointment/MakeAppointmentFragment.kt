@@ -112,13 +112,18 @@ class MakeAppointmentFragment : BaseFragment<FragmentAddAppointmentBinding>() {
 
 
                 binding.appointDateEdt.showDate {
-                    DatePickerDialog(
+                    var myDatePicker =  DatePickerDialog(
                         baseActivity,
                         appointmentDate,
                         myCalendar[Calendar.YEAR],
                         myCalendar[Calendar.MONTH],
                         myCalendar[Calendar.DAY_OF_MONTH]
-                    ).show()
+
+                    )
+                    myDatePicker.datePicker.minDate = System.currentTimeMillis();
+
+
+                    myDatePicker.show()
                 }
             }
 

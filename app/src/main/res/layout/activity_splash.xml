@@ -10,14 +10,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SplashActivity">
+        tools:context=".ui.splash.SplashActivity">
 
         <ImageView
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:src="@drawable/logo_with_descreption_final"
+            android:layout_height="wrap_content"
+            android:src="@drawable/big_logo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

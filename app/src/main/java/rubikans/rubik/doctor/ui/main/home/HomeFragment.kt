@@ -39,6 +39,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
     val viewModel: HomeViewModel by activityViewModels()
     private lateinit var adapter: AppointmentsAdapter
     var charCount = 0
+    var positionX = 0
 
 
     override fun onResume() {
@@ -84,6 +85,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
 
         binding.refresh.setOnRefreshListener {
             adapter.refresh()
+            lifecycleScope.launch {
+                adapter.loadStateFlow
+                    .collect {
+                        binding.appointmentsList.smoothScrollToPosition(0)
+                    }
+            }
         }
 
 
@@ -116,25 +123,25 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
 
         adapter = AppointmentsAdapter(baseActivity,
             onItemClicked = {
+                    model , position ->
 
-
-                navController.navigate(HomeFragmentDirections.openappointmentDetailsFragment(it.bookingID.toString()))
+                navController.navigate(HomeFragmentDirections.openappointmentDetailsFragment(model.bookingID.toString()))
 
             },
 
 
             onConfirmClicked = {
-
+                    model , position ->
                 val bottomSheet = ChangeAppointmentStatusBottomSheet(
                     onConfirmed = {
 
 
 
                         viewModel.changeAppointmentStatus(
-                            pBookingID = it.bookingID.toString(),
+                            pBookingID = model.bookingID.toString(),
                             pStatus = "2"
                         )
-
+                        positionX = position
 
                     },
 
@@ -150,14 +157,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
 
 
             onCancelClicked = {
+                    model , position ->
                 val bottomSheet = ChangeAppointmentStatusBottomSheet(
                     onConfirmed = {
 
                         viewModel.changeAppointmentStatus(
-                            pBookingID = it.bookingID.toString(),
+                            pBookingID = model.bookingID.toString(),
                             pStatus = "5"
                         )
-
+                        positionX = position
 
                     },
 
@@ -170,14 +178,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
 
             },
             onNoShowClicked = {
+                    model , position ->
                 val bottomSheet = ChangeAppointmentStatusBottomSheet(
                     onConfirmed = {
 
                         viewModel.changeAppointmentStatus(
-                            pBookingID = it.bookingID.toString(),
+                            pBookingID = model.bookingID.toString(),
                             pStatus = "6"
                         )
-
+                        positionX = position
                     },
 
 
@@ -188,16 +197,17 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
                 )
 
             },
-            onDoneClicked = {
+            onDoneClicked = { model , position ->
                 val bottomSheet = ChangeAppointmentStatusBottomSheet(
                     onConfirmed = {
 
 
 
                         viewModel.changeAppointmentStatus(
-                            pBookingID = it.bookingID.toString(),
+                            pBookingID = model.bookingID.toString(),
                             pStatus = "4"
                         )
+                        positionX = position
 
 
                     },
@@ -211,14 +221,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
                 )
 
             },
-            onOnServiceClicked = {
+            onOnServiceClicked = { model , position ->
                 val bottomSheet = ChangeAppointmentStatusBottomSheet(
                     onConfirmed = {
 
                         viewModel.changeAppointmentStatus(
-                            pBookingID = it.bookingID.toString(),
+                            pBookingID = model.bookingID.toString(),
                             pStatus = "3"
                         )
+
+                        positionX = position
 
                     },
 
@@ -342,7 +354,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
                     baseActivity.hideDialogLoading()
                     val response = it.data as BaseResponse<BaseResponse.EmptyData>
                    adapter.refresh()
-
+                    lifecycleScope.launch {
+                        adapter.loadStateFlow
+                            .collect {
+                                binding.appointmentsList.smoothScrollToPosition(positionX + 1)
+                            }
+                    }
                 }
                 is Status.Error -> {
                     baseActivity.hideDialogLoading()

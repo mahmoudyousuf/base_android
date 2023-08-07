@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "33830802960",
+    "project_id": "rubik-clinic",
+    "storage_bucket": "rubik-clinic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33830802960:android:ed8236738f4d2ac38d1c95",
+        "android_client_info": {
+          "package_name": "rubikans.rubik.doctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33830802960-1ia9alfpa8ei2mbr97i20i5jhjf7629n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaovOr89ge6wKiZ2jC7FKGm4jtTLsMWz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33830802960-1ia9alfpa8ei2mbr97i20i5jhjf7629n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "33830802960-5h567lms34iogpmul55edp993r97ucs0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "rubikans.rubikcare.patient"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33830802960:android:e2e24a2fc124663e8d1c95",
+        "android_client_info": {
+          "package_name": "rubikans.rubikcare.patient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33830802960-1ia9alfpa8ei2mbr97i20i5jhjf7629n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaovOr89ge6wKiZ2jC7FKGm4jtTLsMWz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33830802960-1ia9alfpa8ei2mbr97i20i5jhjf7629n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "33830802960-5h567lms34iogpmul55edp993r97ucs0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "rubikans.rubikcare.patient"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
