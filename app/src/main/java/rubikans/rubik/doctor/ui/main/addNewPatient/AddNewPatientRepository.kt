@@ -19,7 +19,7 @@ class AddNewPatientRepository @Inject constructor(
 
 
 
-    suspend fun addNewPatient(props: JsonObject):  Response<BaseResponse<BaseResponse.EmptyData>> =
+    suspend fun addNewPatient(props: JsonObject):  Response<BaseResponse<String>> =
         api.addNewPatient(
             props
         )

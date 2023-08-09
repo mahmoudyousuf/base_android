@@ -186,7 +186,7 @@ class AddNewPatientFragment : BaseFragment<FragmentAddNewPatientBinding>() {
             }
 
 
-            if (!Pattern.compile("[0-9]{10,11}").matcher(binding.patientMobileEdt.getText())
+            if (!Pattern.compile("[0-9]{11}").matcher(binding.patientMobileEdt.getText())
                     .matches()
             ){
                 binding.patientMobileEdt.setError(getString(R.string.phone_number_digits_should_be_from_10_to_11_numbers))
@@ -277,7 +277,7 @@ class AddNewPatientFragment : BaseFragment<FragmentAddNewPatientBinding>() {
                 }
                 is Status.Success<*> -> {
                     baseActivity.hideDialogLoading()
-                    val response = it.data as BaseResponse<BaseResponse.EmptyData>
+                    val response = it.data as BaseResponse<String>
                     baseActivity.showSuccessSnackbar(response.message.toString())
                     navController.navigateUp()
 

@@ -155,7 +155,7 @@ interface ApiServices {
     @POST("api/Profiles/InsertClinicPatient")
     suspend fun addNewPatient(
         @Body props: JsonObject
-    ): Response<BaseResponse<BaseResponse.EmptyData>>
+    ): Response<BaseResponse<String>>
 
 
 
