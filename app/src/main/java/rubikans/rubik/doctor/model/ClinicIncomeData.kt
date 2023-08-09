@@ -62,6 +62,10 @@ data class ClinicIncomeDataItem(
 	@field:SerializedName("ConsultationServiceName")
 	val consultationServiceName: String? = null,
 
+
+	@field:SerializedName("ServiceAndConsulationName")
+	val ServiceAndConsulationName: String? = null,
+
 	@field:SerializedName("Notes")
 	val notes: Any? = null,
 

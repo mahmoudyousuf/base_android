@@ -76,7 +76,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
             viewModel.checkClinicSetting(baseActivity.dataManager.clinic!!.entityBranchID.toString())
 
         }
-        binding.customBar.visibleNotificationIcon()
+//        binding.customBar.visibleNotificationIcon()
         binding.customBar.notificationCardView.setOnClickListener {
 
             navController.navigate(HomeFragmentDirections.openNotificationFragment())

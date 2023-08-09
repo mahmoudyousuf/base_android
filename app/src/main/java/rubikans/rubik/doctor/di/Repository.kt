@@ -31,6 +31,7 @@ import rubikans.rubik.doctor.ui.main.makeAppointment.MakeAppointmentRepository
 import rubikans.rubik.doctor.ui.main.notification.NotificationsRepository
 import rubikans.rubik.doctor.ui.main.patients.PatientsRepository
 import rubikans.rubik.doctor.ui.main.profile.ProfileRepository
+import rubikans.rubik.doctor.ui.main.splash.SplashRepository
 import javax.inject.Singleton
 
 
@@ -270,6 +271,15 @@ object Repository {
         NotificationsRepository(appContext, dataManager,api)
 
 
+
+    @Singleton
+    @Provides
+    fun splashRepository(
+        @ApplicationContext appContext: Context,
+        dataManager: DataManager,
+        api: ApiServices,
+    ): SplashRepository =
+        SplashRepository(appContext, dataManager,api)
 
 
 

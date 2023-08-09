@@ -1,11 +1,12 @@
-package rubikans.rubikcare.patient.ui.splash
+package rubikans.rubik.doctor.ui.main.splash
 import android.content.Context
 import com.google.gson.JsonObject
 import retrofit2.Response
-import rubikans.rubikcare.patient.base.BaseRepository
-import rubikans.rubikcare.patient.base.BaseResponse
-import rubikans.rubikcare.patient.data.shared.DataManager
-import rubikans.rubikcare.patient.data.retrofit.ApiServices
+import rubikans.rubik.doctor.base.BaseRepository
+import rubikans.rubik.doctor.base.BaseResponse
+import rubikans.rubik.doctor.data.retrofit.ApiServices
+import rubikans.rubik.doctor.data.shared.DataManager
+
 
 import javax.inject.Inject
 

@@ -52,7 +52,7 @@ class ClinicIncomeAdapter(
             binding.tvNameTxt.text = model.patientName
             binding.tvIdTxt.text =  "# ${model.patientProfileID.toString()}"
             binding.tvIncomeTypeTxt.text = model.incomeTypeName
-            binding.tvIncomeNameTxt.text = model.consultationServiceName
+            binding.tvIncomeNameTxt.text = model.ServiceAndConsulationName
             binding.tvFeesTxt.text = "${model.fees} ${context.getString(R.string.egp)}"
             binding.tvDateAndTimeTxt.text = CommonUtilities.convertFullDateToFormattedDateTxt(model.createDate)
 

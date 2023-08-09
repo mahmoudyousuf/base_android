@@ -7,6 +7,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import rubikans.rubik.doctor.R
 import rubikans.rubik.doctor.base.BaseBottomSheet
 import rubikans.rubik.doctor.databinding.BottomSheetChangeLangaugeBinding
+import rubikans.rubik.doctor.ui.main.splash.SplashActivity
 import rubikans.rubik.doctor.util.LocaleUtils
 
 

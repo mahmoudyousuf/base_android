@@ -94,7 +94,7 @@
     <string name="appointments">Appointments</string>
     <string name="payment_status">Payment Status :</string>
     <string name="date_time"><![CDATA[Date & Time :]]></string>
-    <string name="no_appointment_found">No Appointment Found !</string>
+    <string name="no_appointment_found">No Appointment Founded !</string>
     <string name="try_again">Try Again</string>
     <string name="error_text_label">Connection Error</string>
     <string name="no_show">No Show</string>
@@ -147,7 +147,7 @@
     <string name="date_of_appointment">Date Of Appointment</string>
     <string name="time_off_appointment">Time off appointment</string>
     <string name="booked">Booked</string>
-    <string name="no_match_found">No Match found</string>
+    <string name="no_match_found">No Match founded !</string>
     <string name="number_of_cases">Number Of Cases :</string>
     <string name="number_of_reservations">Number Of Reservations :</string>
     <string name="available_remaining_cases">Available Remaining Cases :</string>
@@ -176,6 +176,7 @@
 
 
 
+    <string name="no_data_found">No Data Founded !</string>
 
 
 
@@ -186,7 +187,7 @@
     <string name="birthdate">Birthdate :</string>
     <string name="gender_">Gender :</string>
     <string name="change_your_photo"><u>Change your photo</u></string>
-    <string name="no_booking_found_in_this_date">No booking found in this date</string>
+    <string name="no_booking_found_in_this_date">No booking founded in this date</string>
     <string name="income_type_">Income Type :</string>
     <string name="income_name_">Income Name :</string>
     <string name="clinic_income">Clinic Income</string>

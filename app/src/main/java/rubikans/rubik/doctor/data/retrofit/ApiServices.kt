@@ -276,6 +276,11 @@ interface ApiServices {
     ): Response<BaseResponse<BaseResponse.EmptyData>>
 
 
+    @Headers("Accept: application/json")
+    @GET("api/Notifications/ResetFirebaseToken")
+    suspend fun refreshFCMToken(
+        @Query("pToken") pToken: String,
+    ): Response<BaseResponse<BaseResponse.EmptyData>>
 
 
 
