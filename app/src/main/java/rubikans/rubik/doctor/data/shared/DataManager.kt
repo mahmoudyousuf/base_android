@@ -2,8 +2,7 @@ package rubikans.rubik.doctor.data.shared
 
 import android.content.Context
 import android.content.SharedPreferences
-import rubikans.rubik.doctor.model.ClinicBranchesDataItem
-import rubikans.rubik.doctor.model.ProfileData
+
 import rubikans.rubik.doctor.util.LocaleUtils
 import rubikans.rubik.doctor.util.extensions.toObjectFromJson
 
@@ -81,21 +80,21 @@ class DataManager(context: Context?) {
     ///////////////////////////////////////////////////////////////////
 
 
-
-    fun saveProfile(x: String) {
-        mSharedPreferences!!.edit().putString(Profile, x).apply()
-    }
-
-
-    fun deleteProfile() {
-        mSharedPreferences!!.edit().remove(Profile).apply()
-    }
-
-    val profile: ProfileData?
-        get() {
-            return mSharedPreferences!!.getString(Profile, "")
-                .toObjectFromJson(ProfileData::class.java)
-        }
+//
+//    fun saveProfile(x: String) {
+//        mSharedPreferences!!.edit().putString(Profile, x).apply()
+//    }
+//
+//
+//    fun deleteProfile() {
+//        mSharedPreferences!!.edit().remove(Profile).apply()
+//    }
+//
+//    val profile: ProfileData?
+//        get() {
+//            return mSharedPreferences!!.getString(Profile, "")
+//                .toObjectFromJson(ProfileData::class.java)
+//        }
 
     ////////////////////////////////////////////////////////////////////////////////
 
@@ -204,20 +203,20 @@ class DataManager(context: Context?) {
 
 
 
-    fun saveClinic(x: String) {
-        mSharedPreferences!!.edit().putString(CLINIC, x).apply()
-    }
-
-
-    fun deleteClinic() {
-        mSharedPreferences!!.edit().remove(CLINIC).apply()
-    }
-
-    val clinic: ClinicBranchesDataItem?
-        get() {
-            return mSharedPreferences!!.getString(CLINIC, "")
-                .toObjectFromJson(ClinicBranchesDataItem::class.java)
-        }
+//    fun saveClinic(x: String) {
+//        mSharedPreferences!!.edit().putString(CLINIC, x).apply()
+//    }
+//
+//
+//    fun deleteClinic() {
+//        mSharedPreferences!!.edit().remove(CLINIC).apply()
+//    }
+//
+//    val clinic: ClinicBranchesDataItem?
+//        get() {
+//            return mSharedPreferences!!.getString(CLINIC, "")
+//                .toObjectFromJson(ClinicBranchesDataItem::class.java)
+//        }
 
     ////////////////////////////////////////////////////////////////////////////////
 

@@ -48,7 +48,7 @@ class MyNotificationManager(private val mCtx: Context) {
 
         notificationBuilder.setAutoCancel(true)
             .setWhen(System.currentTimeMillis())
-            .setSmallIcon(R.drawable.notification)
+//            .setSmallIcon(R.drawable.notification)
             .setTicker(mCtx.resources.getString(R.string.app_name))
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setSound(soundUri)

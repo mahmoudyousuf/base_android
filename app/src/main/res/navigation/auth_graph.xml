@@ -11,73 +11,17 @@
         android:label="SignInFragment"
         tools:layout="@layout/fragment_sign_in">
 
-        <action
-            android:id="@+id/openForgetPasswordFragment"
-            app:destination="@id/ForgetPasswordFragment" />
 
 
-    </fragment>
-    <fragment
-        android:id="@+id/ForgetPasswordFragment"
-        android:name="rubikans.rubik.doctor.ui.auth.forgetPassword.ForgetPasswordFragment"
-        android:label="ForgetPasswordFragment"
-        tools:layout="@layout/fragment_forget_password">
-
-        <action
-            android:id="@+id/openOtpForgetPasswordFragment"
-            app:destination="@id/OtpForgetPasswordFragment">
-
-
-            <argument
-                android:name="email"
-                app:argType="string" />
-
-    </action>
-    </fragment>
-
-
-    <fragment
-        android:id="@+id/OtpForgetPasswordFragment"
-        android:name="rubikans.rubik.doctor.ui.auth.forgetPasswordOtpCheck.OtpForgetPasswordFragment"
-        android:label="OtpForgetPasswordFragment"
-        tools:layout="@layout/fragment_otp_forget_password">
-
-        <argument
-            android:name="email"
-            app:argType="string" />
-        <action
-            android:id="@+id/openConfirmForgetPasswordFragment"
-            app:destination="@id/ConfirmForgetPasswordFragment">
-            <argument
-                android:name="accountId"
-                app:argType="string" />
-            <argument
-                android:name="email"
-                app:argType="string" />
-            <argument
-                android:name="code"
-                app:argType="string" />
-    </action>
 
     </fragment>
 
 
 
-    <fragment
-        android:id="@+id/ConfirmForgetPasswordFragment"
-        android:name="rubikans.rubik.doctor.ui.auth.forgetPasswordConfirmNewPassword.ConfirmForgetPasswordFragment"
-        android:label="ConfirmForgetPasswordFragment"
-        tools:layout="@layout/fragment_confirm_reset_password">
-        <argument
-            android:name="accountId"
-            app:argType="string" />
-        <argument
-            android:name="email"
-            app:argType="string" />
-        <argument
-            android:name="code"
-            app:argType="string" />
-    </fragment>
+
+
+
+
 
 
 
